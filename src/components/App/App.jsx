@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import HomePage from "../HomePage/HomePage.jsx";
+import HomePage from "../pages/HomePage/HomePage.jsx";
 function App() {
   return (
     <Routes>
