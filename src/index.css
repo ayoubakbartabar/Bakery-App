@@ -23,8 +23,9 @@
 }
 
 :root {
-    --components-title: 'Kaushan Script', cursive;
-    --Lota-blackI: 'Lota', cursive;
+    --font-kaushan: 'Kaushan Script', cursive;
+    --font-lato-black-italic: 'Lato', cursive;
+    --font-lato-italic: 'Lato', cursive;
 }
 
 body {
