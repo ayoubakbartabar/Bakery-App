@@ -5,7 +5,7 @@ import "./Navbar.css";
 export default function Navbar() {
   const MenuArr = [
     { id: 1, title: "About", href: "/about" },
-
+    { id: 2, title: "Projects", href: "/projects" },
   ];
 
   return (
