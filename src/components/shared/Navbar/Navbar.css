@@ -26,13 +26,13 @@
     position: relative;
 }
 
-.icon-btn.search::before {
+/* .icon-btn.search::before {
     content: url('/assets/icons/search.svg');
 }
 
 .icon-btn.cart::before {
     content: url('/assets/icons/cart.svg');
-}
+} */
 
 .icon-btn .badge {
     position: absolute;
