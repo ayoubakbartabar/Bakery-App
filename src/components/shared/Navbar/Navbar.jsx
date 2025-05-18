@@ -17,6 +17,36 @@ export default function Navbar() {
   ];
 
   return (
+    <nav className="navbar">
+      <ul className="navbar-left">
+        {leftMenu.map((item) => (
+          <li key={item.id}>
+            <Link to={item.href}>{item.title}</Link>
+          </li>
+        ))}
+      </ul>
 
+      <div className="navbar-logo">
+        <Link to="/">
+          <img src="src/assets/images/navbar-logo.avif" alt="Logo" />
+        </Link>
+      </div>
+
+      <ul className="navbar-right">
+        {rightMenu.map((item) => (
+          <li key={item.id}>
+            <Link to={item.href}>{item.title}</Link>
+          </li>
+        ))}
+        <li>
+          <button className="icon-btn search"></button>
+        </li>
+        <li>
+          <button className="icon-btn cart">
+            <span className="badge">0</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
   );
 }
