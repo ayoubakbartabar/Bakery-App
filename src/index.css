@@ -1,3 +1,7 @@
+/* ------------------------
+   Font Face Declarations
+-------------------------*/
+
 /* Kaushan Script */
 @font-face {
     font-family: 'Kaushan Script';
@@ -14,7 +18,7 @@
     font-style: italic;
 }
 
-/* Lato Italic (regular weight) */
+/* Lato Regular Italic */
 @font-face {
     font-family: 'Lato';
     src: url('/src/assets/fonts/Lato/Lato-Italic.ttf') format('truetype');
@@ -22,24 +26,38 @@
     font-style: italic;
 }
 
+
+/* ------------------------
+   CSS Variables (Global)
+-------------------------*/
+
 :root {
-    /* fonts group */
+    /* Fonts */
     --font-kaushan: 'Kaushan Script', cursive;
-    --font-lato-black-italic: 'Lato', cursive;
-    --font-lato-italic: 'Lato', cursive;
+    --font-lato: 'Lato', sans-serif;
 
-    /* text color group */
-    --withe-color: rgb(255, 255, 255);
-    --black-color: rgb(0, 0, 0);
-    --primary-color: rgb(205, 155, 51);
-    --gray-color: rgb(102, 102, 102);
-    --light-gray-color:rgb(199, 199, 199);
-    --very-light-gray-color:rgb(119, 119, 119);
-
+    /* Text Colors */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-primary: #cd9b33;
+    /* Gold-like tone */
+    --color-gray: #666666;
+    /* Medium gray */
+    --color-gray-light: #c7c7c7;
+    /* Light gray */
+    --color-gray-very-light: #777777;
+    /* Very light gray */
 }
+
+
+/* ------------------------
+   Base Styling
+-------------------------*/
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif Arial, Helvetica, sans-serif;
-    /* font-family: Lota; */
-
+    color: var(--color-black);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
