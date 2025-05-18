@@ -1,7 +1,10 @@
-import React from 'react'
-import './AboutPage.jsx'
+import React from "react";
+import "./AboutPage.jsx";
+import Navbar from "../../shared/Navbar/Navbar.jsx";
 export default function AboutPage() {
   return (
-    <div>AboutPage</div>
-  )
+    <>
+      <Navbar />
+    </>
+  );
 }
