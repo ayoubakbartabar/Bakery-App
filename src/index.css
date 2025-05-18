@@ -23,9 +23,14 @@
 }
 
 :root {
+    /* fonts group */
     --font-kaushan: 'Kaushan Script', cursive;
     --font-lato-black-italic: 'Lato', cursive;
     --font-lato-italic: 'Lato', cursive;
+
+    /* text color group */
+    --read-more : rgb(205, 155, 51);
+
 }
 
 body {
