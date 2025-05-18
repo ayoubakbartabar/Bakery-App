@@ -1,9 +1,9 @@
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 1rem 3rem;
-    background: white;
+    flex-direction: row;
 }
 
 .navbar-left,
