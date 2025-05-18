@@ -1,3 +1,17 @@
-/* body{
-    font-family: Kaushan Script, sans-serif;
-} */
+@font-face {
+    font-family: 'Kaushan Script';
+    src: url('/src/assets/fonts/Kaushan_Script/KaushanScript-Regular.ttf') format('truetype');
+    font-family: 'Lota';
+    src: url('/src/assets/fonts/Lato/Lato-BlackItalic.ttf') format('truetype');
+}
+
+:root {
+    --components-title: 'Kaushan Script', cursive;
+    --Lota-blackI: 'Lota', cursive;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif Arial, Helvetica, sans-serif;
+    /* font-family: Lota; */
+
+}
