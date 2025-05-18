@@ -1,0 +1,44 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background: white;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar-logo img {
+    height: 60px;
+    object-fit: contain;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.icon-btn.search::before {
+    content: url('/assets/icons/search.svg');
+}
+
+.icon-btn.cart::before {
+    content: url('/assets/icons/cart.svg');
+}
+
+.icon-btn .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 999px;
+}
