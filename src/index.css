@@ -29,6 +29,8 @@
     --font-lato-italic: 'Lato', cursive;
 
     /* text color group */
+    --withe-color: rgb(255, 255, 255);
+    --black-color: rgb(0, 0, 0);
     --primary-color: rgb(205, 155, 51);
     --gray-color: rgb(102, 102, 102);
     --light-gray-color:rgb(199, 199, 199);
