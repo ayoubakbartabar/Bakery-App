@@ -1,8 +1,25 @@
+/* Kaushan Script */
 @font-face {
     font-family: 'Kaushan Script';
     src: url('/src/assets/fonts/Kaushan_Script/KaushanScript-Regular.ttf') format('truetype');
-    font-family: 'Lota';
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Lato Black Italic */
+@font-face {
+    font-family: 'Lato';
     src: url('/src/assets/fonts/Lato/Lato-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* Lato Italic (regular weight) */
+@font-face {
+    font-family: 'Lato';
+    src: url('/src/assets/fonts/Lato/Lato-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
 }
 
 :root {
