@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState} from "react";
 import { Link } from "react-router-dom";
 import { RiShoppingBasket2Line } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
@@ -18,11 +18,6 @@ export default function Navbar() {
     { id: 6, title: "CONTACT", href: "/contact" },
   ];
 
-  // create searchHandler function 
-  const searchHandler = () =>{
-
-    
-  }
   return (
     <nav className="navbar">
       <ul className="navbar-left">
@@ -46,7 +41,7 @@ export default function Navbar() {
           </li>
         ))}
         <li>
-          <button onClick={() => searchHandler()} className="icon-btn search">
+          <button className="icon-btn search">
             <CiSearch />
           </button>
         </li>
