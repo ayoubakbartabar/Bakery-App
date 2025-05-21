@@ -50,12 +50,12 @@ export default function Navbar() {
               onClick={() => setIsSearchOpen(true)}
               className="icon-btn search"
             >
-              <CiSearch />
+              <CiSearch className="searchIcon" />
             </button>
           </li>
           <li>
             <button className="icon-btn cart">
-              <RiShoppingBasket2Line />
+              <RiShoppingBasket2Line className="shoppingIcon" />
               <span className="badge">0</span>
             </button>
           </li>
