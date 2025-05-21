@@ -44,8 +44,8 @@ export default function Navbar() {
       <nav className="navbar">
         <ul className="navbar-left">
           {leftMenu.map((item) => (
-            <li key={item.id}>
-              <Link to={item.href}>{item.title}</Link>
+            <li className="menu-li" key={item.id}>
+              <Link className="menu-link" to={item.href}>{item.title}</Link>
             </li>
           ))}
         </ul>
