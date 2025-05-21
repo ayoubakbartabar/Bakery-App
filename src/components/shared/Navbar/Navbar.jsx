@@ -7,6 +7,7 @@ import "./Navbar.css";
 import SearchModal from "./SearchModal/SearchModal";
 
 export default function Navbar() {
+  // set Hook for Search bar
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const leftMenu = [
