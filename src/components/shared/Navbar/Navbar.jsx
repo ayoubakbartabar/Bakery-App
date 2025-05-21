@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { RiShoppingBasket2Line } from "react-icons/ri";
+import { CiSearch } from "react-icons/ci";
 
 import "./Navbar.css";
 
@@ -40,7 +41,9 @@ export default function Navbar() {
           </li>
         ))}
         <li>
-          <button className="icon-btn search"></button>
+          <button className="icon-btn search">
+            <CiSearch />
+          </button>
         </li>
         <li>
           <button className="icon-btn cart">
