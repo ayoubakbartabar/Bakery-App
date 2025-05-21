@@ -18,6 +18,11 @@ export default function Navbar() {
     { id: 6, title: "CONTACT", href: "/contact" },
   ];
 
+  // create searchHandler function 
+  const searchHandler = () =>{
+
+    
+  }
   return (
     <nav className="navbar">
       <ul className="navbar-left">
@@ -41,7 +46,7 @@ export default function Navbar() {
           </li>
         ))}
         <li>
-          <button className="icon-btn search">
+          <button onClick={() => searchHandler()} className="icon-btn search">
             <CiSearch />
           </button>
         </li>
