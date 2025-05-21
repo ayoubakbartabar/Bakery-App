@@ -15,7 +15,9 @@
     list-style: none;
     align-items: center;
 }
-
+.menu-link{
+  text-decoration: none !important;
+}
 .navbar-logo img {
     height: 60px;
     object-fit: contain;
