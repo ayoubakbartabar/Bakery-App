@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./SearchModal.css";
 import { IoClose } from "react-icons/io5";
 
-export default function SearchModal() {
+export default function SearchModal({onClose}) {
   // set Hook
   const [query, setQuery] = useState("");
 
@@ -28,7 +28,7 @@ export default function SearchModal() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button className="search-btn" onClick={handleSearch}>
+        <button className="search-btn" onClick={searchInputHandler}>
           search
         </button>
       </div>
