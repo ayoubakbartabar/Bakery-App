@@ -45,7 +45,9 @@ export default function Navbar() {
         <ul className="navbar-left">
           {leftMenu.map((item) => (
             <li className="menu-li" key={item.id}>
-              <Link className="menu-link" to={item.href}>{item.title}</Link>
+              <Link className="menu-link" to={item.href}>
+                {item.title}
+              </Link>
             </li>
           ))}
         </ul>
@@ -58,8 +60,10 @@ export default function Navbar() {
 
         <ul className="navbar-right">
           {rightMenu.map((item) => (
-            <li key={item.id}>
-              <Link to={item.href}>{item.title}</Link>
+            <li className="menu-li" key={item.id}>
+              <Link className="menu-link" to={item.href}>
+                {item.title}
+              </Link>
             </li>
           ))}
 
