@@ -4,6 +4,8 @@
     justify-content: space-evenly;
     padding: 1rem 3rem;
     flex-direction: row;
+    max-width: 1410px;
+    margin: 0 auto;
 }
 
 .navbar-left,
