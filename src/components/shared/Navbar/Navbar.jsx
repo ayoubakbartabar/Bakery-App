@@ -83,7 +83,30 @@ export default function Navbar() {
             </button>
 
             {cartHover && (
-            
+              <div className="cart-dropdown">
+                {cartItems.length === 0 ? (
+                  <p className="cart-empty">Your cart is currently empty.</p>
+                ) : (
+                  <>
+                    {cartItems.map((item) => (
+                      <div className="cart-item" key={item.id}>
+                        <img src={item.image} alt={item.title} />
+                        <div className="cart-item-info">
+                          <div>{item.title}</div>
+                          <div>
+                            {item.quantity} × ${item.price.toFixed(2)}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                    <div className="cart-subtotal">
+                      <span>Subtotal:</span>
+                      <strong>${cartTotal.toFixed(2)}</strong>
+                    </div>
+                    <button className="view-bag-btn">VIEW BAG</button>
+                  </>
+                )}
+              </div>
             )}
           </li>
         </ul>
