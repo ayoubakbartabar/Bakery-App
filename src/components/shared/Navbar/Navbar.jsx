@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { RiShoppingBasket2Line } from "react-icons/ri";
+
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -42,6 +44,7 @@ export default function Navbar() {
         </li>
         <li>
           <button className="icon-btn cart">
+            <RiShoppingBasket2Line />
             <span className="badge">0</span>
           </button>
         </li>
