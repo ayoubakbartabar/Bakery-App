@@ -16,8 +16,8 @@
     background-color: #fff;
     padding: 2rem;
     border-radius: 12px;
-    width: 90%;
-    max-width: 500px;
+    width: 100%;
+    max-width: 550px;
     text-align: center;
     position: relative;
 }
@@ -28,7 +28,7 @@
 }
 
 .modal-content input {
-    width: 100%;
+    width: 80%;
     padding: 0.8rem;
     font-size: 1rem;
     border: 1px solid #ccc;
