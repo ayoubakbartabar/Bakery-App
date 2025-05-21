@@ -1,11 +1,14 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiShoppingBasket2Line } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 
 import "./Navbar.css";
+import SearchModal from "./SearchModal/SearchModal";
 
 export default function Navbar() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   const leftMenu = [
     { id: 1, title: "ABOUT", href: "/about" },
     { id: 2, title: "PRODUCT", href: "/product" },
@@ -19,39 +22,45 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="navbar">
-      <ul className="navbar-left">
-        {leftMenu.map((item) => (
-          <li key={item.id}>
-            <Link to={item.href}>{item.title}</Link>
-          </li>
-        ))}
-      </ul>
+    <>
+      <nav className="navbar">
+        <ul className="navbar-left">
+          {leftMenu.map((item) => (
+            <li key={item.id}>
+              <Link to={item.href}>{item.title}</Link>
+            </li>
+          ))}
+        </ul>
 
-      <div className="navbar-logo">
-        <Link to="/">
-          <img src="src/assets/images/navbar-logo.avif" alt="Logo" />
-        </Link>
-      </div>
+        <div className="navbar-logo">
+          <Link to="/">
+            <img src="src/assets/images/navbar-logo.avif" alt="Logo" />
+          </Link>
+        </div>
 
-      <ul className="navbar-right">
-        {rightMenu.map((item) => (
-          <li key={item.id}>
-            <Link to={item.href}>{item.title}</Link>
+        <ul className="navbar-right">
+          {rightMenu.map((item) => (
+            <li key={item.id}>
+              <Link to={item.href}>{item.title}</Link>
+            </li>
+          ))}
+          <li>
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="icon-btn search"
+            >
+              <CiSearch />
+            </button>
           </li>
-        ))}
-        <li>
-          <button className="icon-btn search">
-            <CiSearch />
-          </button>
-        </li>
-        <li>
-          <button className="icon-btn cart">
-            <RiShoppingBasket2Line />
-            <span className="badge">0</span>
-          </button>
-        </li>
-      </ul>
-    </nav>
+          <li>
+            <button className="icon-btn cart">
+              <RiShoppingBasket2Line />
+              <span className="badge">0</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      {isSearchOpen && <SearchModal onClose={() => setIsSearchOpen(false)} />}
+    </>
   );
 }
