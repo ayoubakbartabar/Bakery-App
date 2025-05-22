@@ -6,6 +6,7 @@ import AboutPage from "../pages/AboutPage/AboutPage.jsx";
 import PagesPage from "../pages/PagesPage/PagesPage.jsx";
 import GalleryPage from "../pages/GalleryPage/GalleryPage.jsx";
 import BlogsPage from "../pages/BlogsPage/BlogsPage.jsx";
+import ContactPage from "../pages/ContactPage/ContactPage.jsx";
 function App() {
   return (
     <Routes>
@@ -14,6 +15,7 @@ function App() {
       <Route path="/pages" element={<PagesPage/>} />
       <Route path="/gallery" element={<GalleryPage/>} />
       <Route path="/blogs" element={<BlogsPage/>} />
+      <Route path="/contact" element={<ContactPage/>} />
     </Routes>
   );
 }
