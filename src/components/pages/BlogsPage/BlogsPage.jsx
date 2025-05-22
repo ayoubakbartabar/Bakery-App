@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../shared/Navbar/Navbar'
-import './BlogesPage.css'
-export default function BlogesPage() {
+import './BlogsPage.css'
+export default function BlogsPage() {
   return (
     <Navbar/>
   )
