@@ -1,0 +1,53 @@
+.shopify-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-item img {
+    width: 500px;
+    max-width: 90%;
+    height: auto;
+    transition: opacity 0.5s ease;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-button.left {
+    left: 1rem;
+}
+
+.nav-button.right {
+    right: 1rem;
+}
+
+.add-to-cart {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    border: 2px solid #d3a675;
+    background: transparent;
+    color: #d3a675;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #d3a675;
+    color: white;
+}
