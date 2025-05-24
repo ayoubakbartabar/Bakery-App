@@ -1,7 +1,7 @@
 .shopify-section {
     text-align: center;
     padding: 2rem;
-    background-color: #fff;
+    background-color: var(--color-white);
 }
 
 .slider-container {
@@ -20,6 +20,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: none;
 }
 
 .slider-image {
@@ -28,6 +32,18 @@
     max-height: 400px;
     object-fit: cover;
     transition: opacity 0.5s ease;
+}
+
+.slider-item.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.slider-item.inactive {
+    transform: scale(0.95);
 }
 
 .nav-button {

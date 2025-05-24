@@ -26,10 +26,16 @@ export default function ShopifySection() {
           <MdOutlineKeyboardArrowLeft size={32} />
         </button>
 
-        <div className="slider-item">
-          <img className="slider-image" src={ShopifyData[current].img} alt={ShopifyData[current].alt} />
-        </div>
-
+        {ShopifyData.map((item, index) => (
+          <div
+            key={item.id}
+            className={`slider-item ${
+              index === current ? "active" : "inactive"
+            }`}
+          >
+            <img className="slider-image" src={item.img} alt={item.alt} />
+          </div>
+        ))}
         <button className="nav-button right" onClick={nextSlider}>
           <MdOutlineKeyboardArrowRight size={32} />
         </button>
