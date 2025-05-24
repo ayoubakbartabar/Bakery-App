@@ -5,7 +5,7 @@ import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
-
+import { MdOutlineShoppingCart } from "react-icons/md";
 export default function ShopifySection() {
   // Set Hook
   const [current, setCurrent] = useState(0);
@@ -27,7 +27,7 @@ export default function ShopifySection() {
         </button>
 
         <div className="slider-item">
-          <img src={ShopifyData[current].img} alt={ShopifyData[current].alt} />
+          <img className="slider-image" src={ShopifyData[current].img} alt={ShopifyData[current].alt} />
         </div>
 
         <button className="nav-button right" onClick={nextSlider}>
@@ -35,7 +35,10 @@ export default function ShopifySection() {
         </button>
       </div>
 
-      <button className="add-to-cart">ADD TO CART</button>
+      <button className="add-to-cart">
+        <span className="cart-text">ADD TO CART</span>
+        <MdOutlineShoppingCart className="cart-icon" />
+      </button>
     </section>
   );
 }

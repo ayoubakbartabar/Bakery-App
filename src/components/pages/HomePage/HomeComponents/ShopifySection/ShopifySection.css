@@ -9,12 +9,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 400px;
+    overflow: hidden;
 }
 
-.slider-item img {
+.slider-item {
     width: 500px;
     max-width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-image {
+    width: 100%;
     height: auto;
+    max-height: 400px;
+    object-fit: cover;
     transition: opacity 0.5s ease;
 }
 
@@ -37,17 +49,65 @@
 
 .add-to-cart {
     margin-top: 2rem;
-    padding: 0.8rem 2rem;
-    border-radius: 2rem;
-    border: 2px solid #d3a675;
-    background: transparent;
-    color: #d3a675;
-    font-weight: bold;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: #f4f4f4;
+    color: #111;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
-    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    width: 200px;
+    z-index: 1;
 }
 
-.add-to-cart:hover {
-    background-color: #d3a675;
-    color: white;
+.add-to-cart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary);
+    z-index: 0;
+    transition: left 0.4s ease;
+}
+
+.add-to-cart:hover::before {
+    left: 0;
+}
+
+
+.add-to-cart .cart-text,
+.add-to-cart .cart-icon {
+    position: absolute;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1;
+}
+
+.add-to-cart .cart-text {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.add-to-cart .cart-icon {
+    transform: translateY(100%);
+    opacity: 0;
+    font-size: 1.5rem;
+}
+
+/* Hover Effect */
+.add-to-cart:hover .cart-text {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.add-to-cart:hover .cart-icon {
+    transform: translateY(0);
+    opacity: 1;
 }
