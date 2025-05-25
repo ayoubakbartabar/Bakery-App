@@ -10,6 +10,16 @@ export default function ShopifySection() {
   // Set Hook
   const [current, setCurrent] = useState(0);
   const length = ShopifyData.length;
+  const [clicked, setClicked] = useState(false);
+
+  const handleClick = () => {
+    if (clicked) return;
+    setClicked(true);
+    setTimeout(() => {
+      setClicked(false);
+    }, 2000);
+  };
+
   // create arrows handler
   const prevSlider = () => {
     setCurrent((prev) => (prev - 1 + length) % length);
@@ -41,9 +51,14 @@ export default function ShopifySection() {
         </button>
       </div>
 
-      <button className="add-to-cart">
+      <button
+        className={`add-to-cart ${clicked ? "clicked" : ""}`}
+        onClick={handleClick}
+      >
         <span className="cart-text">ADD TO CART</span>
-        <MdOutlineShoppingCart className="cart-icon" />
+        <MdOutlineShoppingCart
+          className={`cart-icon ${clicked ? "exit-right" : ""}`}
+        />
       </button>
     </section>
   );
