@@ -1,0 +1,78 @@
+.welcome-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+.welcome-section-top-title {
+    font-family: Kaushan Script, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-section-top-paragraph {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.welcome-section-top-img {
+    width: 100px;
+    height: auto;
+    margin: 0 auto 2rem;
+}
+
+.welcome-section-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.welcome-section-box {
+    max-width: 400px;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: transparent;
+}
+
+.welcome-section-box-svg {
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.welcome-section-box-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.welcome-section-box-date {
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: Lato;
+    font-weight: 600;
+}
+
+.welcome-section-box-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--color-gray);
+}
+
+/* mobile media */
+@media (max-width: 768px) {
+    .welcome-section-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-section-box {
+        width: 100%;
+        max-width: 90%;
+    }
+}
