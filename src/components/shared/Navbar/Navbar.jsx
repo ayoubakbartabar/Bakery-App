@@ -21,7 +21,6 @@ export default function Navbar() {
   const rightMenu = [
     { id: 4, title: "GALLERY", href: "/gallery" },
     { id: 5, title: "BLOGS", href: "/blogs" },
-    { id: 6, title: "CONTACT", href: "/contact" },
   ];
 
   // this array for test

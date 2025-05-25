@@ -1,10 +1,10 @@
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 1rem 3rem;
   flex-direction: row;
-  max-width: 1410px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
