@@ -41,7 +41,21 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <ul className="navbar-left">
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <span className="hamburger-icon" />
+        </button>
+
+        <div className="navbar-logo">
+          <Link to="/">
+            <img src="src/assets/images/navbar-logo.avif" alt="Logo" />
+          </Link>
+        </div>
+
+        {/* left side */}
+        <ul className="navbar-left desktop-only">
           {leftMenu.map((item) => (
             <li className="menu-li" key={item.id}>
               <Link className="menu-link" to={item.href}>
@@ -50,14 +64,8 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        <div className="navbar-logo">
-          <Link to="/">
-            <img src="src/assets/images/navbar-logo.avif" alt="Logo" />
-          </Link>
-        </div>
-
-        <ul className="navbar-right">
+        {/* right side */}
+        <ul className="navbar-right desktop-only">
           {rightMenu.map((item) => (
             <li className="menu-li" key={item.id}>
               <Link className="menu-link" to={item.href}>
@@ -114,6 +122,20 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
+
+      {mobileMenuOpen && (
+        <div className="mobile-menu">
+          <ul className="mobile-menu-list">
+            {[...leftMenu, ...rightMenu].map((item) => (
+              <li key={item.id}>
+                <Link to={item.href} onClick={() => setMobileMenuOpen(false)}>
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {isSearchOpen && <SearchModal onClose={() => setIsSearchOpen(false)} />}
     </>
