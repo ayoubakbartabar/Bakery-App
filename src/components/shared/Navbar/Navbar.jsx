@@ -11,6 +11,7 @@ export default function Navbar() {
   // set Hook for Search bar
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [cartHover, setCartHover] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const leftMenu = [
     { id: 1, title: "ABOUT", href: "/about" },
@@ -38,6 +39,7 @@ export default function Navbar() {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+
   return (
     <>
       <nav className="navbar">
@@ -57,17 +59,18 @@ export default function Navbar() {
         {/* left side */}
         <ul className="navbar-left desktop-only">
           {leftMenu.map((item) => (
-            <li className="menu-li" key={item.id}>
+            <li key={item.id}>
               <Link className="menu-link" to={item.href}>
                 {item.title}
               </Link>
             </li>
           ))}
         </ul>
+
         {/* right side */}
         <ul className="navbar-right desktop-only">
           {rightMenu.map((item) => (
-            <li className="menu-li" key={item.id}>
+            <li key={item.id}>
               <Link className="menu-link" to={item.href}>
                 {item.title}
               </Link>
@@ -125,6 +128,12 @@ export default function Navbar() {
 
       {mobileMenuOpen && (
         <div className="mobile-menu">
+          <button
+            className="close-mobile-menu"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <IoClose size={24} />
+          </button>
           <ul className="mobile-menu-list">
             {[...leftMenu, ...rightMenu].map((item) => (
               <li key={item.id}>

@@ -1,13 +1,15 @@
+/* ----- Layout Base ----- */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 3rem;
-  flex-direction: row;
+  padding: 1rem 2rem;
   max-width: 1600px;
   margin: 0 auto;
+  position: relative;
 }
 
+/* Left + Right Menus */
 .navbar-left,
 .navbar-right {
   display: flex;
@@ -16,6 +18,25 @@
   align-items: center;
 }
 
+/* Hide on mobile */
+.desktop-only {
+  display: none;
+}
+
+/* Center logo always */
+.navbar-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.navbar-logo img {
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Menu links */
 .menu-link {
   position: relative;
   text-decoration: none;
@@ -42,11 +63,7 @@
   width: 100%;
 }
 
-.navbar-logo img {
-  height: 60px;
-  object-fit: contain;
-}
-
+/* ----- Icons & Buttons ----- */
 .icon-btn {
   background: none;
   border: none;
@@ -61,6 +78,8 @@
   font-size: 10px;
   padding: 2px 6px;
   border-radius: 999px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .searchIcon,
@@ -69,8 +88,7 @@
   width: 3em;
 }
 
-
-/* shopping cart styles */
+/* ----- Cart Dropdown ----- */
 .cart-wrapper {
   position: relative;
 }
@@ -79,8 +97,8 @@
   position: absolute;
   top: 120%;
   right: 0;
-  background-color: #2c2f3a;
-  color: white;
+  background-color: var(--color-gray-dark);
+  color: var(--color-white);
   border-radius: 8px;
   width: 280px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -96,7 +114,7 @@
   right: 20px;
   border-width: 0 10px 10px 10px;
   border-style: solid;
-  border-color: transparent transparent #2c2f3a transparent;
+  border-color: transparent transparent var(--color-gray-dark) transparent;
 }
 
 .cart-item {
@@ -139,4 +157,102 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+
+/* ----- Mobile Menu Button ----- */
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+}
+
+.hamburger-icon {
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  position: relative;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  transition: 0.3s;
+}
+
+.hamburger-icon::before {
+  top: -8px;
+}
+
+.hamburger-icon::after {
+  top: 8px;
+}
+
+/* ----- Mobile Menu Panel ----- */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 80%;
+  max-width: 320px;
+  background-color: white;
+  z-index: 999;
+  padding: 2rem 1.5rem;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  animation: slideIn 0.4s forwards ease-out;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.close-mobile-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  margin-top: 3rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-menu-list a {
+  color: #111;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.mobile-menu-list a:hover {
+  color: var(--color-primary);
+}
+
+/* ----- Responsive ----- */
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
 }
