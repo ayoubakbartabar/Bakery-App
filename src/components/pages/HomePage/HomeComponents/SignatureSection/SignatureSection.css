@@ -1,0 +1,56 @@
+.signature-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    background: #fff;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.signature-section-img {
+    max-width: 500px;
+    height: auto;
+}
+
+.signature-section-left-side {
+    max-width: 600px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.signature-section-left-side-title {
+    font-family: serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #333;
+    line-height: 1.7;
+}
+
+.signature-section-left-side-paragraph {
+    margin-top: 1rem;
+    color: #777;
+}
+
+.signature-section-left-side-image {
+    margin-top: 1rem;
+    max-height: 48px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .signature-section {
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .signature-section-img {
+        max-width: 800px;
+    }
+
+    .signature-section-left-side {
+        margin-top: 0;
+        margin-left: 2rem;
+    }
+}
