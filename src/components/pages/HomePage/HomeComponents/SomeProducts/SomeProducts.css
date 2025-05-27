@@ -30,12 +30,15 @@
 
 .some-products-section-bottom {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 1.5rem;
     justify-items: center;
     max-width: 1400px;
     margin: 3rem auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
+
 
 .some-products-box {
     display: flex;
@@ -151,6 +154,23 @@
 
     .some-products-box-buttons {
         justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .some-products-section-bottom {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .some-products-box {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        max-width: unset;
+        min-width: 280px;
     }
 }
 
