@@ -6,6 +6,8 @@ const SomeProductsData = [
     title: "Cupcake Glory",
     detail: "Bakery- Bio- Sweet",
     price: "$36.00",
+    new: true,
+    svg: "src/assets/images/badge-red.webp",
   },
   {
     id: 2,
@@ -14,6 +16,8 @@ const SomeProductsData = [
     title: "Oreo Cupcakes",
     detail: "Bio",
     price: "$36.00",
+    new: true,
+    svg: "src/assets/images/badge-red.webp",
   },
   {
     id: 3,
@@ -22,6 +26,8 @@ const SomeProductsData = [
     title: "Pumpkin Spice",
     detail: "Bakery - Sweet",
     price: "$33.00",
+    new: false,
+    svg: "src/assets/images/badge-red.webp",
   },
   {
     id: 4,
@@ -30,6 +36,8 @@ const SomeProductsData = [
     title: "Lemon Cupcakes",
     detail: "Bakery- Bio",
     price: "$15.00",
+    new: false,
+    svg: "src/assets/images/badge-red.webp",
   },
   {
     id: 5,
@@ -38,6 +46,8 @@ const SomeProductsData = [
     title: "Moist Chocolate",
     detail: "Bio",
     price: "$12.00",
+    new: false,
+    svg: "src/assets/images/badge-red.webp",
   },
   {
     id: 6,
@@ -45,6 +55,8 @@ const SomeProductsData = [
     title: "Pepper Cupcakes",
     detail: "Sweet",
     price: "$22.00",
+    new: false,
+    svg: "src/assets/images/badge-red.webp",
   },
 ];
 
