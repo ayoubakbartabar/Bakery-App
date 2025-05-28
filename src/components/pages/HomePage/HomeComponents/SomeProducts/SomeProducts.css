@@ -82,8 +82,8 @@
 
 .some-products-box-new {
     position: absolute;
-    top: -2px;
-    left: -5px;
+    top: -5px;
+    left: -6px;
     color: var(--color-white);
     font-size: 1rem;
     font-weight: bold;

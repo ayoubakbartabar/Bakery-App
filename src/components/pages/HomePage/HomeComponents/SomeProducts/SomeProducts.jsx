@@ -8,13 +8,41 @@ import { RiShoppingBasketLine } from "react-icons/ri";
 export default function SomeProducts() {
   // set Hook
   const [likedItems, setLikedItems] = useState({});
+  const [buyproducts, setBuyProducts] = useState({});
 
-  // favorite product handler
+  // create function for favorite product handler
   const toggleLike = (id) => {
     setLikedItems((prev) => ({
       ...prev,
       [id]: !prev[id],
     }));
+  };
+
+  // create function for buy product
+  const butProduct = (product) => {
+    setBuyProducts((prev) => {
+      const existingProduct = prev[product.id];
+
+      // set if problem for count
+      if (existingProduct) {
+        return {
+          ...prev,
+          [product.id]: {
+            ...existingProduct,
+            count: existingProduct + 1,
+          },
+        };
+      }
+
+      // if the product buy for first time
+      return {
+        ...prev,
+        [product.id]: {
+          ...product,
+          count: 1,
+        },
+      };
+    });
   };
 
   return (
@@ -62,7 +90,10 @@ export default function SomeProducts() {
                 >
                   {likedItems[item.id] ? <MdFavorite /> : <MdFavoriteBorder />}
                 </button>
-                <button className="buy-product-buttons">
+                <button
+                  onClick={() => butProduct(item)}
+                  className="buy-product-buttons"
+                >
                   <RiShoppingBasketLine />
                 </button>
               </div>
