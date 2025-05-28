@@ -6,14 +6,18 @@ import WelcomeSection from "./HomeComponents/WelcomeSection/WelcomeSection";
 import SignatureSection from "./HomeComponents/SignatureSection/SignatureSection";
 import SomeProducts from "./HomeComponents/SomeProducts/SomeProducts";
 
+import { BuyProductsProvider } from "../../shared/BuyProductContext/BuyProductContext.jsx"; 
+
 export default function HomePage() {
   return (
     <>
+    <BuyProductsProvider> 
       <Navbar />
       <ShopifySection />
       <WelcomeSection />
       <SignatureSection />
       <SomeProducts />
+    </BuyProductsProvider>
     </>
   );
 }

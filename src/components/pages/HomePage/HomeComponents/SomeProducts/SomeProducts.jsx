@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import "./SomeProducts.css";
 import SomeProductsData from "./SomeProductsData.js";
+import { useBuyProducts } from "../../../../shared/BuyProductContext/BuyProductContext.jsx";
 
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { RiShoppingBasketLine } from "react-icons/ri";
 
 export default function SomeProducts() {
-  // set Hook
+  // Track liked (favorite) products by ID
   const [likedItems, setLikedItems] = useState({});
-  const [buyproducts, setBuyProducts] = useState({});
 
-  // create function for favorite product handler
+  // Access global cart context
+  const { buyProducts, setBuyProducts } = useBuyProducts();
+
+  // Toggle favorite state for a product
   const toggleLike = (id) => {
     setLikedItems((prev) => ({
       ...prev,
@@ -18,18 +21,14 @@ export default function SomeProducts() {
     }));
   };
 
-  // create function for buy product
-  const butProduct = (product) => {
-    // set state
+  // Add product to cart or increase its count
+  const buyProduct = (product) => {
+    const unitPrice = parseFloat(product.price.replace("$", ""));
+
     setBuyProducts((prev) => {
-
-      // create const prev and unit price
       const existingProduct = prev[product.id];
-      const unitPrice = parseFloat(product.price.replace("$", ""));
 
-      // set if problem 
       if (existingProduct) {
-        // create const for count
         const newCount = existingProduct.count + 1;
 
         return {
@@ -42,7 +41,7 @@ export default function SomeProducts() {
         };
       }
 
-      // if product 
+      // Add new product to cart
       return {
         ...prev,
         [product.id]: {
@@ -56,16 +55,18 @@ export default function SomeProducts() {
 
   return (
     <section className="some-products-section">
+      {/* Header section */}
       <div className="some-products-section-top">
         <h1 className="some-products-section-top-title">Deal of the day</h1>
         <p className="some-products-section-top-paragraph">BREADS EVERY DAY</p>
         <img
           className="some-products-section-top-svg"
           src="src/assets/images/floral_grande.avif"
-          alt="floral grande svg"
+          alt="floral decoration"
         />
       </div>
 
+      {/* Product cards */}
       <div className="some-products-section-bottom">
         {SomeProductsData.map((item) => (
           <div className="some-products-box" key={item.id}>
@@ -79,17 +80,20 @@ export default function SomeProducts() {
                 <>
                   <img
                     src={item.svg}
-                    alt="new"
+                    alt="new label"
                     className="some-products-box-svg"
                   />
                   <i className="some-products-box-new">New</i>
                 </>
               )}
             </div>
+
             <div className="some-products-box-info-box">
               <h2 className="some-products-box-info-title">{item.title}</h2>
               <p className="some-products-box-info-paragraph">{item.detail}</p>
               <p className="some-products-box-info-price">{item.price}</p>
+
+              {/* Like & Buy buttons */}
               <div className="some-products-box-buttons">
                 <button
                   className={`favorite-product-buttons ${
@@ -99,8 +103,9 @@ export default function SomeProducts() {
                 >
                   {likedItems[item.id] ? <MdFavorite /> : <MdFavoriteBorder />}
                 </button>
+
                 <button
-                  onClick={() => butProduct(item)}
+                  onClick={() => buyProduct(item)}
                   className="buy-product-buttons"
                 >
                   <RiShoppingBasketLine />
