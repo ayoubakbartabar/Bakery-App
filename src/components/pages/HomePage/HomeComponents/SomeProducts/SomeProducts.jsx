@@ -20,24 +20,35 @@ export default function SomeProducts() {
 
   // create function for buy product
   const butProduct = (product) => {
+    // set state
     setBuyProducts((prev) => {
-      const existingProduct = prev[product.id];
 
+      // create const prev and unit price
+      const existingProduct = prev[product.id];
+      const unitPrice = parseFloat(product.price.replace("$", ""));
+
+      // set if problem 
       if (existingProduct) {
+        // create const for count
+        const newCount = existingProduct.count + 1;
+
         return {
           ...prev,
           [product.id]: {
             ...existingProduct,
-            count: existingProduct.count + 1,
+            count: newCount,
+            totalPrice: (unitPrice * newCount).toFixed(2),
           },
         };
       }
 
+      // if product 
       return {
         ...prev,
         [product.id]: {
           ...product,
           count: 1,
+          totalPrice: unitPrice.toFixed(2),
         },
       };
     });
