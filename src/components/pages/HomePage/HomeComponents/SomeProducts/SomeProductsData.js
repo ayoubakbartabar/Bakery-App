@@ -8,6 +8,7 @@ const SomeProductsData = [
     price: "$36.00",
     new: true,
     svg: "src/assets/images/badge-red.webp",
+    count:0,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const SomeProductsData = [
     price: "$36.00",
     new: true,
     svg: "src/assets/images/badge-red.webp",
+    count:0,
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const SomeProductsData = [
     price: "$33.00",
     new: false,
     svg: "src/assets/images/badge-red.webp",
+    count:0,
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ const SomeProductsData = [
     price: "$15.00",
     new: false,
     svg: "src/assets/images/badge-red.webp",
+    count:0,
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ const SomeProductsData = [
     price: "$12.00",
     new: false,
     svg: "src/assets/images/badge-red.webp",
+    count:0,
   },
   {
     id: 6,
@@ -57,6 +62,7 @@ const SomeProductsData = [
     price: "$22.00",
     new: false,
     svg: "src/assets/images/badge-red.webp",
+    count:0,
   },
 ];
 

@@ -23,18 +23,16 @@ export default function SomeProducts() {
     setBuyProducts((prev) => {
       const existingProduct = prev[product.id];
 
-      // set if problem for count
       if (existingProduct) {
         return {
           ...prev,
           [product.id]: {
             ...existingProduct,
-            count: existingProduct + 1,
+            count: existingProduct.count + 1,
           },
         };
       }
 
-      // if the product buy for first time
       return {
         ...prev,
         [product.id]: {
