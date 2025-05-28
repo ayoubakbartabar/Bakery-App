@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SomeProducts.css";
 import SomeProductsData from "./SomeProductsData.js";
 
-import { MdFavoriteBorder } from "react-icons/md";
-import { CiSearch } from "react-icons/ci";
+import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { RiShoppingBasketLine } from "react-icons/ri";
 
 export default function SomeProducts() {
+  // set Hook
+  const [likedItems, setLikedItems] = useState({});
+
+  // favorite product handler
+  const toggleLike = (id) => {
+    setLikedItems((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   return (
     <section className="some-products-section">
       <div className="some-products-section-top">
@@ -44,11 +54,13 @@ export default function SomeProducts() {
               <p className="some-products-box-info-paragraph">{item.detail}</p>
               <p className="some-products-box-info-price">{item.price}</p>
               <div className="some-products-box-buttons">
-                <button className="favorite-product-buttons">
-                  <MdFavoriteBorder />
-                </button>
-                <button className="search-product-buttons">
-                  <CiSearch />
+                <button
+                  className={`favorite-product-buttons ${
+                    likedItems[item.id] ? "active" : ""
+                  }`}
+                  onClick={() => toggleLike(item.id)}
+                >
+                  {likedItems[item.id] ? <MdFavorite /> : <MdFavoriteBorder />}
                 </button>
                 <button className="buy-product-buttons">
                   <RiShoppingBasketLine />

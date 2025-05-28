@@ -55,11 +55,14 @@
 /* ------------------------
    Base Styling
 -------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: "sans-serif", Helvetica Neue, Helvetica, ;
     color: var(--color-black);
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
 }

@@ -70,6 +70,7 @@
 .some-products-box-image {
     max-height: 140px;
     object-fit: contain;
+    margin-left: 1rem;
 }
 
 .some-products-box-svg {
@@ -90,7 +91,7 @@
 
 .some-products-box-info-box {
     width: 60%;
-    padding-left: 1rem;
+    padding-left: 2.5rem;
     text-align: left;
 }
 
@@ -120,7 +121,7 @@
 }
 
 .favorite-product-buttons,
-.search-product-buttons,
+
 .buy-product-buttons {
     border: none;
     background: none;
@@ -131,9 +132,13 @@
 }
 
 .favorite-product-buttons:hover,
-.search-product-buttons:hover,
 .buy-product-buttons:hover {
     color: var(--color-primary, rgb(255, 165, 0));
+}
+
+.favorite-product-buttons.active {
+    color: var(--color-primary, rgb(255, 165, 0));
+    transform: scale(1);
 }
 
 @media (max-width: 768px) {
