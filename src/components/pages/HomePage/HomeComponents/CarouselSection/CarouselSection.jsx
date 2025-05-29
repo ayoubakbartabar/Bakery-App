@@ -3,7 +3,6 @@ import "./CarouselSection.css";
 import CarouselSectionData from "./CarouselSectionData";
 
 export default function CarouselSection() {
-    
   //set Hook
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
