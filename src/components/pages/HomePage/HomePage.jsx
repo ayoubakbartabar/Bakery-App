@@ -5,19 +5,21 @@ import ShopifySection from "./HomeComponents/ShopifySection/ShopifySection";
 import WelcomeSection from "./HomeComponents/WelcomeSection/WelcomeSection";
 import SignatureSection from "./HomeComponents/SignatureSection/SignatureSection";
 import SomeProducts from "./HomeComponents/SomeProducts/SomeProducts";
+import CarouselSection from "./HomeComponents/CarouselSection/CarouselSection.jsx";
 
-import { BuyProductsProvider } from "../../shared/BuyProductContext/BuyProductContext.jsx"; 
+import { BuyProductsProvider } from "../../shared/BuyProductContext/BuyProductContext.jsx";
 
 export default function HomePage() {
   return (
     <>
-    <BuyProductsProvider> 
-      <Navbar />
-      <ShopifySection />
-      <WelcomeSection />
-      <SignatureSection />
-      <SomeProducts />
-    </BuyProductsProvider>
+      <BuyProductsProvider>
+        <Navbar />
+        <ShopifySection />
+        <WelcomeSection />
+        <SignatureSection />
+        <SomeProducts />
+        <CarouselSection />
+      </BuyProductsProvider>
     </>
   );
 }
