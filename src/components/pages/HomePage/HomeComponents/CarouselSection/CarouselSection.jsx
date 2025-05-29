@@ -3,7 +3,8 @@ import "./CarouselSection.css";
 import CarouselSectionData from "./CarouselSectionData";
 
 export default function CarouselSection() {
-  //set Hook   
+    
+  //set Hook
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const touchStartX = useRef(null);
@@ -46,14 +47,19 @@ export default function CarouselSection() {
 
   // Handle dot click
   const handleDotClick = (index) => {
-    if (index === currentIndex || animating) return;
-    setCurrentIndex(index);
+    if (index === currentIndex) return;
+
+    setAnimating(true); // start animation
+    setTimeout(() => {
+      setCurrentIndex(index); // change item after zoom-z
+      setAnimating(false); // remove animation
+    }, 400);
   };
 
   return (
     <section className="carousel-section">
       <div
-        className={`carousel-container ${animating ? "fade-slide" : ""}`}
+        className={`carousel-container ${animating ? "zoom-z" : ""}`}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
