@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import "./ShopifySection.css";
+
 import ShopifyData from "./ShopifySectionData";
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 import { MdOutlineShoppingCart } from "react-icons/md";
+
 export default function ShopifySection() {
   // Set Hook
   const [current, setCurrent] = useState(0);
   const length = ShopifyData.length;
   const [clicked, setClicked] = useState(false);
-
+  // create function for add to cart button
   const handleClick = () => {
     if (clicked) return;
     setClicked(true);
