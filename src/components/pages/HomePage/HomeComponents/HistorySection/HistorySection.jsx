@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import HistorySectionData from "./HistorySectionData";
 import "./HistorySection.css";
 
@@ -7,38 +7,49 @@ export default function HistorySection() {
   const itemsPerPage = 3;
   const totalPages = Math.ceil(HistorySectionData.length / itemsPerPage);
 
+  // Store the starting X coordinate of touch or mouse event
   const startXRef = useRef(null);
 
-  const handleTouchStart = (e) => {
-    startXRef.current = e.touches[0].clientX;
-  };
+  /**
+   * Handle the start of swipe (touch or mouse down)
+   * @param {number} clientX - X coordinate of the pointer event
+   */
+  const handleStart = useCallback((clientX) => {
+    startXRef.current = clientX;
+  }, []);
 
-  const handleTouchEnd = (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = endX - startXRef.current;
+  /**
+   * Handle the end of swipe (touch or mouse up)
+   * Calculate difference and update current page accordingly
+   * @param {number} clientX - X coordinate of the pointer event
+   */
+  const handleEnd = useCallback(
+    (clientX) => {
+      if (startXRef.current === null) return;
 
-    if (diff > 50 && currentPage > 0) {
-      setCurrentPage((prev) => prev - 1);
-    } else if (diff < -50 && currentPage < totalPages - 1) {
-      setCurrentPage((prev) => prev + 1);
-    }
-  };
+      const diff = clientX - startXRef.current;
 
-  const handleMouseDown = (e) => {
-    startXRef.current = e.clientX;
-  };
+      if (diff > 50 && currentPage > 0) {
+        setCurrentPage((prev) => prev - 1);
+      } else if (diff < -50 && currentPage < totalPages - 1) {
+        setCurrentPage((prev) => prev + 1);
+      }
 
-  const handleMouseUp = (e) => {
-    const endX = e.clientX;
-    const diff = endX - startXRef.current;
+      // Reset startX after processing
+      startXRef.current = null;
+    },
+    [currentPage, totalPages]
+  );
 
-    if (diff > 50 && currentPage > 0) {
-      setCurrentPage((prev) => prev - 1);
-    } else if (diff < -50 && currentPage < totalPages - 1) {
-      setCurrentPage((prev) => prev + 1);
-    }
-  };
+  // Touch event handlers
+  const handleTouchStart = (e) => handleStart(e.touches[0].clientX);
+  const handleTouchEnd = (e) => handleEnd(e.changedTouches[0].clientX);
 
+  // Mouse event handlers
+  const handleMouseDown = (e) => handleStart(e.clientX);
+  const handleMouseUp = (e) => handleEnd(e.clientX);
+
+  // Get currently visible items based on currentPage
   const getVisibleItems = () => {
     const start = currentPage * itemsPerPage;
     return HistorySectionData.slice(start, start + itemsPerPage);
@@ -63,7 +74,11 @@ export default function HistorySection() {
       >
         <div className="slider-track no-scroll">
           {getVisibleItems().map((item) => (
-            <div key={item.id} className="history-card">
+            <article
+              key={item.id}
+              className="history-card"
+              aria-label={item.title}
+            >
               <img
                 src={item.image}
                 alt={item.title}
@@ -75,10 +90,14 @@ export default function HistorySection() {
                 By <span>{item.author}</span>
               </p>
               <p className="history-paragraph">{item.paragraph}</p>
-              <a href="#" className="read-more">
+              <a
+                href="#"
+                className="read-more"
+                aria-label={`Read more about ${item.title}`}
+              >
                 READ MORE
               </a>
-            </div>
+            </article>
           ))}
         </div>
       </div>
