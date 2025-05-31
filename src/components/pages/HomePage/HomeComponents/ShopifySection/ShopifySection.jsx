@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./ShopifySection.css";
-
 import ShopifyData from "./ShopifySectionData";
+
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
+  MdOutlineShoppingCart,
 } from "react-icons/md";
-import { MdOutlineShoppingCart } from "react-icons/md";
 
 export default function ShopifySection() {
-  // Set Hook
+
+  // set Hook
   const [current, setCurrent] = useState(0);
-  const length = ShopifyData.length;
   const [clicked, setClicked] = useState(false);
-  // create function for add to cart button
+  const length = ShopifyData.length;
+  // set UseRef
+  const startX = useRef(null);
+  // create  add to cart function 
   const handleClick = () => {
     if (clicked) return;
     setClicked(true);
-    setTimeout(() => {
-      setClicked(false);
-    }, 2000);
+    setTimeout(() => setClicked(false), 2000);
   };
 
   // create arrows handler
@@ -30,12 +31,39 @@ export default function ShopifySection() {
   const nextSlider = () => {
     setCurrent((prev) => (prev + 1) % length);
   };
+  // create function for touch of mobile
+  const handleTouchStart = (e) => {
+    startX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (startX.current === null) return;
+    const endX = e.changedTouches[0].clientX;
+    const diffX = startX.current - endX;
+
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        // Swipe left
+        nextSlider();
+      } else {
+        // Swipe right
+        prevSlider();
+      }
+    }
+
+    startX.current = null;
+  };
 
   return (
     <section className="shopify-section">
-      <div className="slider-container">
-        <button className="nav-button left" onClick={prevSlider}>
-          <MdOutlineKeyboardArrowLeft size={32} />
+      <div
+        className="slider-container"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* Hide arrows on mobile */}
+        <button className="nav-button left">
+          <MdOutlineKeyboardArrowLeft size={32} onClick={prevSlider} />
         </button>
 
         {ShopifyData.map((item, index) => (
@@ -48,8 +76,9 @@ export default function ShopifySection() {
             <img className="slider-image" src={item.img} alt={item.alt} />
           </div>
         ))}
-        <button className="nav-button right" onClick={nextSlider}>
-          <MdOutlineKeyboardArrowRight size={32} />
+
+        <button className="nav-button right">
+          <MdOutlineKeyboardArrowRight size={32} onClick={nextSlider} />
         </button>
       </div>
 
