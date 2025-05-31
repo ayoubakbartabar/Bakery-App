@@ -144,3 +144,13 @@
     transform: translateY(0);
     opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .slider-container {
+    overflow: hidden;
+    touch-action: pan-y;
+  }
+    .nav-button {
+    display: none;
+  }
+}
