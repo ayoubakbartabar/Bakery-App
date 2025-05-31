@@ -6,9 +6,10 @@ import WelcomeSection from "./HomeComponents/WelcomeSection/WelcomeSection";
 import SignatureSection from "./HomeComponents/SignatureSection/SignatureSection";
 import SomeProducts from "./HomeComponents/SomeProducts/SomeProducts";
 import CarouselSection from "./HomeComponents/CarouselSection/CarouselSection.jsx";
+import HistorySection from "./HomeComponents/HistorySection/HistorySection.jsx";
+import DeliverySection from "./HomeComponents/DeliverySection/DeliverySection.jsx";
 
 import { BuyProductsProvider } from "../../shared/BuyProductContext/BuyProductContext.jsx";
-import HistorySection from "./HomeComponents/HistorySection/HistorySection.jsx";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
         <SomeProducts />
         <CarouselSection />
         <HistorySection/>
+        <DeliverySection/>
       </BuyProductsProvider>
     </>
   );
