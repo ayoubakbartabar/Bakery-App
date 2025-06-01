@@ -8,6 +8,7 @@ import SomeProducts from "./HomeComponents/SomeProducts/SomeProducts";
 import CarouselSection from "./HomeComponents/CarouselSection/CarouselSection.jsx";
 import HistorySection from "./HomeComponents/HistorySection/HistorySection.jsx";
 import DeliverySection from "./HomeComponents/DeliverySection/DeliverySection.jsx";
+import Footer from "../../shared/Footer/Footer.jsx";
 
 import { BuyProductsProvider } from "../../shared/BuyProductContext/BuyProductContext.jsx";
 
@@ -23,6 +24,7 @@ export default function HomePage() {
         <CarouselSection />
         <HistorySection/>
         <DeliverySection/>
+        <Footer/>
       </BuyProductsProvider>
     </>
   );
