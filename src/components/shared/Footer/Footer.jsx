@@ -1,6 +1,12 @@
 import React from "react";
 import "./Footer.css";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
 import { FaCcVisa, FaCcMastercard, FaPaypal } from "react-icons/fa";
 
 export default function Footer() {
@@ -8,15 +14,25 @@ export default function Footer() {
     <footer className="footer-section">
       <div className="footer-container">
         <div className="footer-brand">
-          <img className="logo-circle" src="public\logo-light.avif" alt="" />
+          <img
+            className="logo-circle"
+            src="src\assets\images\logo-light.webp"
+            alt=""
+          />
           <p className="footer-description">
             Tart bear claw cake tiramisu chocolate bar gummies dragée lemon
             drops brownie.
           </p>
           <div className="footer-socials">
-            <FaFacebookF />
-            <FaTwitter />
-            <FaInstagram />
+            <a href="#">
+              <FaFacebookF />
+            </a>
+            <a href="https://www.linkedin.com/in/ayoub-akbartabar-bb78b2212/">
+              <FaLinkedin />
+            </a>
+            <a href="https://github.com/ayoubakbartabar">
+              <FaGithub />
+            </a>
           </div>
         </div>
 
@@ -56,8 +72,8 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <p>
-          © Copyright by <span>Bready Store</span>. Design by{" "}
-          <a href="#">Alena Studio</a>.
+          © Copyright by <a href="https://cruip.com/">Bready Store</a>. Design
+          by <a href="https://github.com/ayoubakbartabar">Ayoub Akbartabar</a>.
         </p>
         <button
           className="scroll-top"
