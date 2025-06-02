@@ -5,7 +5,7 @@ import ShopifySection from "./HomeComponents/ShopifySection/ShopifySection";
 import WelcomeSection from "../../shared/WelcomeSection/WelcomeSection.jsx";
 import SignatureSection from "../../shared/SignatureSection/SignatureSection.jsx";
 import SomeProducts from "./HomeComponents/SomeProducts/SomeProducts";
-import CarouselSection from "./HomeComponents/CarouselSection/CarouselSection.jsx";
+import CarouselSection from "../../shared/CarouselSection/CarouselSection.jsx";
 import HistorySection from "./HomeComponents/HistorySection/HistorySection.jsx";
 import DeliverySection from "./HomeComponents/DeliverySection/DeliverySection.jsx";
 import Footer from "../../shared/Footer/Footer.jsx";
