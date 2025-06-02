@@ -3,7 +3,7 @@ import "./HomePage.css";
 import Navbar from "../../shared/Navbar/Navbar";
 import ShopifySection from "./HomeComponents/ShopifySection/ShopifySection";
 import WelcomeSection from "../../shared/WelcomeSection/WelcomeSection.jsx";
-import SignatureSection from "./HomeComponents/SignatureSection/SignatureSection";
+import SignatureSection from "../../shared/SignatureSection/SignatureSection.jsx";
 import SomeProducts from "./HomeComponents/SomeProducts/SomeProducts";
 import CarouselSection from "./HomeComponents/CarouselSection/CarouselSection.jsx";
 import HistorySection from "./HomeComponents/HistorySection/HistorySection.jsx";
