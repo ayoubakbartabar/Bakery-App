@@ -1,5 +1,36 @@
 .about-us-section {
     max-width: 1600px;
-    margin: 0 auto;
+    margin: 5rem auto;
     background-image: url("src/assets/images/about.webp");
+    position: relative;
+    padding: 5rem 2rem;
+    color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-us-title {
+    font-size: 5rem;
+}
+
+.about-us-menu {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.about-us-link {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--color-black);
+    font-weight: 600;
+}
+
+.about-us-paragraph {
+    font-size: 1.2rem;
+
 }

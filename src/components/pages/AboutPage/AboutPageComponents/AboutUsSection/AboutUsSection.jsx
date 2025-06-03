@@ -9,7 +9,7 @@ export default function AboutUsSection() {
         <a href="/" className="about-us-link">
           HOME
         </a>
-        <p>{` > About Us`}</p>
+        <p className="about-us-paragraph">{` > About Us`}</p>
       </span>
     </section>
   );
