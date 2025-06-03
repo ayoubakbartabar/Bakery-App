@@ -118,6 +118,20 @@
   border-color: transparent transparent var(--color-gray-dark) transparent;
 }
 
+.empty-version {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.continue-shopping {
+  text-align: center;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
 .cart-item {
   display: flex;
   align-items: center;

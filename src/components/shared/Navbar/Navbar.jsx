@@ -104,7 +104,12 @@ export default function Navbar() {
             {cartHover && (
               <div className="cart-dropdown">
                 {cartItems.length === 0 ? (
-                  <p className="cart-empty">Your cart is currently empty.</p>
+                  <div className="empty-version">
+                    <p className="cart-empty">Your cart is currently empty.</p>
+                    <a href="/" className="continue-shopping">
+                      Continue shopping
+                    </a>
+                  </div>
                 ) : (
                   <>
                     {cartItems.map((item) => (
