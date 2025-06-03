@@ -1,8 +1,16 @@
-import React from 'react'
-import './AboutUsSection.css'
+import React from "react";
+import "./AboutUsSection.css";
 
 export default function AboutUsSection() {
   return (
-    <section className='about-us-section'>AboutUsSection</section>
-  )
+    <section className="about-us-section">
+      <h1 className="about-us-title">About Us</h1>
+      <span className="about-us-menu">
+        <a href="/" className="about-us-link">
+          HOME
+        </a>
+        <p>{` > About Us`}</p>
+      </span>
+    </section>
+  );
 }
