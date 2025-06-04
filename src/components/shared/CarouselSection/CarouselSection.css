@@ -1,11 +1,11 @@
 .carousel-section {
     background: url('src/assets/images/testimonials.jpg') no-repeat center center/cover;
-    padding: 4rem 1rem;
+    padding: 8rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 1600px;
-    margin: 0 auto;
+    margin: 5rem auto 0;
 }
 
 .carousel-container {
