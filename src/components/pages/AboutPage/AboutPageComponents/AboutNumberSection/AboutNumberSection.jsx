@@ -6,10 +6,10 @@ export default function AboutNumberSection() {
   return (
     <section className="about-number-section">
       {AboutNumberData.map((item) => (
-        <div className="about-number-box" key={item.id}>
-          <i className={`icon ${item.iconClass}`}></i>
-          <h3 className="number">{item.number}</h3>
-          <p className="title">{item.title}</p>
+        <div key={item.id} className="about-number-item">
+          <i className={item.iconClass}></i>
+          <h3 className="about-number-number">{item.number}</h3>
+          <p className="about-number-title">{item.title}</p>
         </div>
       ))}
     </section>
