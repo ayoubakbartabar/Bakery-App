@@ -19,24 +19,29 @@ export default function OurChefSection() {
           <div className="our-chef-card" key={chef.id}>
             <img src={chef.image} alt={chef.title} className="our-chef-image" />
             <div className="our-chef-info">
-              <h3 className="our-chef-name">{chef.title}</h3>
-              <p className="our-chef-role">{chef.role}</p>
-              <div className="our-chef-divider"></div>
-              <p className="our-chef-paragraph">{chef.paragraph}</p>
-              <div className="our-chef-contact">
-                <p>Tel: {chef.tel}</p>
-                <p>{chef.url}</p>
+              <div className="our-chef-main-info">
+                <h3 className="our-chef-name">{chef.title}</h3>
+                <p className="our-chef-role">{chef.role}</p>
+                <div className="our-chef-divider"></div>
+                <p className="our-chef-paragraph">{chef.paragraph}</p>
               </div>
-              <div className="our-chef-icons">
-                <a href="#" className="our-chef-icon-link">
-                  <FaFacebookF size={14} />
-                </a>
-                <a href="#" className="our-chef-icon-link">
-                  <FaTwitter size={14} />
-                </a>
-                <a href="#" className="our-chef-icon-link">
-                  <FaDribbble size={14} />
-                </a>
+
+              <div className="our-chef-bottom">
+                <div className="our-chef-contact">
+                  <p>Tel: {chef.tel}</p>
+                  <p>{chef.url}</p>
+                </div>
+                <div className="our-chef-icons">
+                  <a href="#" className="our-chef-icon-link">
+                    <FaFacebookF size={14} />
+                  </a>
+                  <a href="#" className="our-chef-icon-link">
+                    <FaTwitter size={14} />
+                  </a>
+                  <a href="#" className="our-chef-icon-link">
+                    <FaDribbble size={14} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
