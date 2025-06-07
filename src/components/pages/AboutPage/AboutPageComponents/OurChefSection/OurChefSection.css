@@ -123,9 +123,34 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+
+    .our-chef-card {
+        display: flex;
+        gap: 20px;
+        text-align: left;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 800px) {
     .our-chef-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .our-chef-card {
+        display: flex;
+        gap: 20px;
+        text-align: left;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .our-chef-image {
+        width: 300px;
     }
 }
