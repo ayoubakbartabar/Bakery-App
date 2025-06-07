@@ -1,25 +1,25 @@
 const AboutNumberData = [
   {
     id: 1,
-    iconClass: "icon-chef",
+    svg: "src/assets/images/489077.png",
     number: 165,
     title: "Baker & Chef",
   },
   {
     id: 2,
-    iconClass: "icon-whisk",
+    svg: "src/assets/images/bakery_4937753.png",
     number: 2130,
     title: "Recepies",
   },
   {
     id: 3,
-    iconClass: "icon-bread",
+    svg: "src/assets/images/croissant_8033264.png",
     number: 3450,
     title: "Bread per day",
   },
   {
     id: 4,
-    iconClass: "icon-flour",
+    svg: "src/assets/images/14899221.png",
     number: 345,
     title: "Kilos of flour",
   },
