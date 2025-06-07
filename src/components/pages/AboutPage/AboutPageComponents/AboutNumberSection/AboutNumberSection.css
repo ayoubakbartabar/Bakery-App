@@ -1,0 +1,50 @@
+.about-number-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+    padding: 3rem 1rem;
+    background-color: #f8f8f8;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.about-number-item {
+    flex: 1 1 200px;
+    max-width: 220px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.about-number-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    filter: sepia(1) hue-rotate(20deg) saturate(1.2);
+}
+
+.about-number-number {
+    font-size: 2.5rem;
+    font-family: Kaushan Script;
+    font-weight: 700;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.about-number-title {
+    font-size: 2rem;
+    font-family: Kaushan Script;
+    font-weight: 700;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .about-number-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-number-item {
+        max-width: 100%;
+    }
+}
