@@ -10,22 +10,22 @@ import HistorySection from "./HomeComponents/HistorySection/HistorySection.jsx";
 import DeliverySection from "./HomeComponents/DeliverySection/DeliverySection.jsx";
 import Footer from "../../shared/Footer/Footer.jsx";
 
-import { BuyProductsProvider } from "../../shared/BuyProductContext/BuyProductContext.jsx";
+import { ProductInteractionProvider } from "../../shared/ProductInteractionContext/ProductInteractionContext.jsx";
 
 export default function HomePage() {
   return (
     <>
-      <BuyProductsProvider>
+      <ProductInteractionProvider>
         <Navbar />
         <ShopifySection />
         <WelcomeSection />
         <SignatureSection />
         <SomeProducts />
         <CarouselSection />
-        <HistorySection/>
-        <DeliverySection/>
-        <Footer/>
-      </BuyProductsProvider>
+        <HistorySection />
+        <DeliverySection />
+        <Footer />
+      </ProductInteractionProvider>
     </>
   );
 }

@@ -1,22 +1,20 @@
 import React from "react";
 import Navbar from "../../shared/Navbar/Navbar";
 import Footer from "../../shared/Footer/Footer";
-import { BuyProductsProvider } from "../../shared/BuyProductContext/BuyProductContext";
+import { ProductInteractionProvider } from "../../shared/ProductInteractionContext/ProductInteractionContext";
 import ProductComHeader from "./ProductPageComponents/ProductComHeader/ProductComHeader";
-import "./ProductPage.css";
 import SliderSection from "./ProductPageComponents/SliderSection/SliderSection";
 import BuyProductSection from "./ProductPageComponents/BuyProductSection/BuyProductSection";
+import "./ProductPage.css";
 
 export default function ProductPage() {
   return (
-    <>
-      <BuyProductsProvider>
-        <Navbar />
-           <ProductComHeader />
-           <SliderSection/>
-           <BuyProductSection/>
-        <Footer />
-      </BuyProductsProvider>
-    </>
+    <ProductInteractionProvider>
+      <Navbar />
+      <ProductComHeader />
+      <SliderSection />
+      <BuyProductSection />
+      <Footer />
+    </ProductInteractionProvider>
   );
 }

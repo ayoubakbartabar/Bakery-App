@@ -9,21 +9,21 @@ import AboutNumberSection from "./AboutPageComponents/AboutNumberSection/AboutNu
 import OurChefSection from "./AboutPageComponents/OurChefSection/OurChefSection.jsx";
 import CarouselSection from "../../shared/CarouselSection/CarouselSection.jsx";
 
-import { BuyProductsProvider } from "../../shared/BuyProductContext/BuyProductContext.jsx";
+import { ProductInteractionProvider } from "../../shared/ProductInteractionContext/ProductInteractionContext.jsx";
 
 export default function AboutPage() {
   return (
     <>
-      <BuyProductsProvider>
+      <ProductInteractionProvider>
         <Navbar />
-          <AboutUsSection/>
-          <WelcomeSection />
-          <SignatureSection />
-          <AboutNumberSection/>
-          <OurChefSection/>
-          <CarouselSection />
+        <AboutUsSection />
+        <WelcomeSection />
+        <SignatureSection />
+        <AboutNumberSection />
+        <OurChefSection />
+        <CarouselSection />
         <Footer />
-      </BuyProductsProvider>
+      </ProductInteractionProvider>
     </>
   );
 }

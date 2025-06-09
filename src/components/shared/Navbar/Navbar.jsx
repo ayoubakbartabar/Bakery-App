@@ -3,33 +3,25 @@ import { Link } from "react-router-dom";
 import { RiShoppingBasket2Line } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
-import { useBuyProducts } from "../BuyProductContext/BuyProductContext.jsx";
+import { useProductInteraction } from "../ProductInteractionContext/ProductInteractionContext";
 
 import "./Navbar.css";
 import SearchModal from "./SearchModal/SearchModal";
 
 export default function Navbar() {
-  // State hooks for UI interaction
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [cartHover, setCartHover] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Get product data from context
-  const { buyProducts } = useBuyProducts();
+  const { buyProducts } = useProductInteraction();
 
-  // Convert buyProducts object to array
   const cartItems = Object.values(buyProducts);
-
-  // Calculate total item count
   const totalCount = cartItems.reduce((sum, item) => sum + item.count, 0);
-
-  // Calculate subtotal price
   const cartTotal = cartItems.reduce(
     (acc, item) => acc + parseFloat(item.totalPrice),
     0
   );
 
-  // Navigation links
   const leftMenu = [
     { id: 1, title: "ABOUT", href: "/about" },
     { id: 2, title: "PRODUCT", href: "/product" },
@@ -44,7 +36,6 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar">
-        {/* Mobile menu toggle button */}
         <button
           className="mobile-menu-btn"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -52,14 +43,12 @@ export default function Navbar() {
           <span className="hamburger-icon" />
         </button>
 
-        {/* Logo */}
         <div className="navbar-logo">
           <Link to="/">
             <img src="src/assets/images/navbar-logo.avif" alt="Logo" />
           </Link>
         </div>
 
-        {/* Desktop left menu */}
         <ul className="navbar-left desktop-only">
           {leftMenu.map((item) => (
             <li key={item.id}>
@@ -70,7 +59,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop right menu */}
         <ul className="navbar-right desktop-only">
           {rightMenu.map((item) => (
             <li key={item.id}>
@@ -80,7 +68,6 @@ export default function Navbar() {
             </li>
           ))}
 
-          {/* Search button */}
           <li>
             <button
               onClick={() => setIsSearchOpen(true)}
@@ -90,7 +77,6 @@ export default function Navbar() {
             </button>
           </li>
 
-          {/* Shopping cart icon and dropdown */}
           <li
             className="cart-wrapper"
             onMouseEnter={() => setCartHover(true)}
@@ -137,7 +123,6 @@ export default function Navbar() {
         </ul>
       </nav>
 
-      {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="mobile-menu">
           <button
@@ -158,7 +143,6 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Search modal */}
       {isSearchOpen && <SearchModal onClose={() => setIsSearchOpen(false)} />}
     </>
   );

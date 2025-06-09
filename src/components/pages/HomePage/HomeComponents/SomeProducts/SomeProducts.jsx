@@ -1,57 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./SomeProducts.css";
 import SomeProductsData from "./SomeProductsData.js";
-import { useBuyProducts } from "../../../../shared/BuyProductContext/BuyProductContext.jsx";
+import { useProductInteraction } from "../../../../shared/ProductInteractionContext/ProductInteractionContext.jsx";
 
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { RiShoppingBasketLine } from "react-icons/ri";
 
 export default function SomeProducts() {
-  // Track liked (favorite) products by ID
-  const [likedItems, setLikedItems] = useState({});
-
-  // Access global cart context
-  const { buyProducts, setBuyProducts } = useBuyProducts();
-
-  // Toggle favorite state for a product
-  const toggleLike = (id) => {
-    setLikedItems((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
-
-  // Add product to cart or increase its count
-  const buyProduct = (product) => {
-    const unitPrice = parseFloat(product.price.replace("$", ""));
-
-    setBuyProducts((prev) => {
-      const existingProduct = prev[product.id];
-
-      if (existingProduct) {
-        const newCount = existingProduct.count + 1;
-
-        return {
-          ...prev,
-          [product.id]: {
-            ...existingProduct,
-            count: newCount,
-            totalPrice: (unitPrice * newCount).toFixed(2),
-          },
-        };
-      }
-
-      // Add new product to cart
-      return {
-        ...prev,
-        [product.id]: {
-          ...product,
-          count: 1,
-          totalPrice: unitPrice.toFixed(2),
-        },
-      };
-    });
-  };
+  // set context
+  const { likedItems, toggleLike, buyProduct } = useProductInteraction();
 
   return (
     <section className="some-products-section">
