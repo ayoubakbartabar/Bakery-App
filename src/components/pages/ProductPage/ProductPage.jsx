@@ -4,13 +4,15 @@ import Footer from "../../shared/Footer/Footer";
 import { BuyProductsProvider } from "../../shared/BuyProductContext/BuyProductContext";
 import ProductComHeader from "./ProductPageComponents/ProductComHeader/ProductComHeader";
 import "./ProductPage.css";
+import SliderSection from "./ProductPageComponents/SliderSection/SliderSection";
 
 export default function ProductPage() {
   return (
     <>
       <BuyProductsProvider>
         <Navbar />
-        <ProductComHeader />
+           <ProductComHeader />
+           <SliderSection/>
         <Footer />
       </BuyProductsProvider>
     </>
