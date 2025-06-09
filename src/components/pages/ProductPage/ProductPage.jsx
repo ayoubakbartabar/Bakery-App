@@ -5,6 +5,7 @@ import { BuyProductsProvider } from "../../shared/BuyProductContext/BuyProductCo
 import ProductComHeader from "./ProductPageComponents/ProductComHeader/ProductComHeader";
 import "./ProductPage.css";
 import SliderSection from "./ProductPageComponents/SliderSection/SliderSection";
+import BuyProductSection from "./ProductPageComponents/BuyProductSection/BuyProductSection";
 
 export default function ProductPage() {
   return (
@@ -13,6 +14,7 @@ export default function ProductPage() {
         <Navbar />
            <ProductComHeader />
            <SliderSection/>
+           <BuyProductSection/>
         <Footer />
       </BuyProductsProvider>
     </>
