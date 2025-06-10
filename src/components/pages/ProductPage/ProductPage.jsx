@@ -3,6 +3,7 @@ import Navbar from "../../shared/Navbar/Navbar";
 import Footer from "../../shared/Footer/Footer";
 import { ProductInteractionProvider } from "../../shared/ProductInteractionContext/ProductInteractionContext";
 import ProductComHeader from "./ProductPageComponents/ProductComHeader/ProductComHeader";
+import BannerSection from "./ProductPageComponents/BannerSection/BannerSection";
 import SliderSection from "./ProductPageComponents/SliderSection/SliderSection";
 import BuyProductSection from "./ProductPageComponents/BuyProductSection/BuyProductSection";
 import "./ProductPage.css";
@@ -12,8 +13,11 @@ export default function ProductPage() {
     <ProductInteractionProvider>
       <Navbar />
       <ProductComHeader />
-      <SliderSection />
-      <BuyProductSection />
+      <div className="product-main-container">
+        <SliderSection />
+        <BannerSection />
+        <BuyProductSection />
+      </div>
       <Footer />
     </ProductInteractionProvider>
   );
