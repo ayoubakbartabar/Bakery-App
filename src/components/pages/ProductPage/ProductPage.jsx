@@ -15,8 +15,12 @@ export default function ProductPage() {
       <ProductComHeader />
       <div className="product-main-container">
         <SliderSection />
-        <BannerSection />
-        <BuyProductSection />
+        <div className="banner-section">
+          <div className="banner-wrapper">
+            <BannerSection />
+            <BuyProductSection />
+          </div>
+        </div>
       </div>
       <Footer />
     </ProductInteractionProvider>

@@ -7,6 +7,13 @@
     flex-wrap: wrap;
 }
 
+.banner-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
 .slider-section {
     flex: 1;
     min-width: 280px;
