@@ -7,6 +7,7 @@ import BannerSection from "./ProductPageComponents/BannerSection/BannerSection";
 import SliderSection from "./ProductPageComponents/SliderSection/SliderSection";
 import BuyProductSection from "./ProductPageComponents/BuyProductSection/BuyProductSection";
 import "./ProductPage.css";
+import FeaturesSection from "./ProductPageComponents/FeaturesSection/FeaturesSection";
 
 export default function ProductPage() {
   return (
@@ -22,6 +23,7 @@ export default function ProductPage() {
           </div>
         </div>
       </div>
+      <FeaturesSection/>
       <Footer />
     </ProductInteractionProvider>
   );
