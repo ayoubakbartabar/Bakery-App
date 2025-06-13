@@ -6,7 +6,7 @@ const ProductsData = [
     title: "Cupcake Glory",
     paragraph:
       "Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate. Cupcake sweet roll sweet dragée dragée. Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate cake. Toffee chocolate cake apple pie...",
-    detail: "Bakery- Bio- Sweet",
+    detail: ["Bakery", "Bio", "Sweet"],
     price: "$36.00",
     new: true,
     svg: "src/assets/images/badge-red.webp",
@@ -20,7 +20,7 @@ const ProductsData = [
     title: "Oreo Cupcakes",
     paragraph:
       "Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate. Cupcake sweet roll sweet dragée dragée. Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate cake. Toffee chocolate cake apple pie...",
-    detail: "Bio",
+    detail: ["Bio"],
     price: "$36.00",
     new: true,
     svg: "src/assets/images/badge-red.webp",
@@ -34,7 +34,7 @@ const ProductsData = [
     title: "Pumpkin Spice",
     paragraph:
       "Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate. Cupcake sweet roll sweet dragée dragée. Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate cake. Toffee chocolate cake apple pie...",
-    detail: "Bakery - Sweet",
+    detail: ["Bakery", "Sweet"],
     price: "$33.00",
     new: false,
     svg: "src/assets/images/badge-red.webp",
@@ -48,7 +48,7 @@ const ProductsData = [
     title: "Lemon Cupcakes",
     paragraph:
       "Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate. Cupcake sweet roll sweet dragée dragée. Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate cake. Toffee chocolate cake apple pie...",
-    detail: "Bakery- Bio",
+    detail: ["Bakery", "Bio"],
     price: "$15.00",
     new: false,
     svg: "src/assets/images/badge-red.webp",
@@ -62,7 +62,7 @@ const ProductsData = [
     title: "Moist Chocolate",
     paragraph:
       "Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate. Cupcake sweet roll sweet dragée dragée. Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate cake. Toffee chocolate cake apple pie...",
-    detail: "Bio",
+    detail: ["Bio"],
     price: "$12.00",
     new: false,
     svg: "src/assets/images/badge-red.webp",
@@ -75,7 +75,7 @@ const ProductsData = [
     title: "Pepper Cupcakes",
     paragraph:
       "Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate. Cupcake sweet roll sweet dragée dragée. Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate cake. Toffee chocolate cake apple pie...",
-    detail: "Sweet",
+    detail: ["Sweet"],
     price: "$22.00",
     new: false,
     svg: "src/assets/images/badge-red.webp",

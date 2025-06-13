@@ -6,7 +6,6 @@ import { RiShoppingBasketLine } from "react-icons/ri";
 import { useProductInteraction } from "../../../../shared/ProductInteractionContext/ProductInteractionContext";
 
 export default function BuyProductSection() {
-  
   // Access interaction context for likes and purchases
   const { likedItems, toggleLike, buyProduct } = useProductInteraction();
 
@@ -24,7 +23,6 @@ export default function BuyProductSection() {
     : ProductsData;
 
   return (
-
     <section className="buy-product-section">
       <select
         className="filter-product"
@@ -44,7 +42,7 @@ export default function BuyProductSection() {
         <div key={item.id} className="product-box">
           <img src={item.image} alt={item.title} className="product-image" />
           <h2 className="product-title">{item.title}</h2>
-          <p className="product-detail">{item.detail}</p>
+          <p className="product-detail">{item.detail.join("  ")}</p>
           <h4 className="product-price">{item.price}</h4>
           <p className="product-paragraph">{item.paragraph}</p>
 
