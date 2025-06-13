@@ -6,8 +6,8 @@ import ProductComHeader from "./ProductPageComponents/ProductComHeader/ProductCo
 import BannerSection from "./ProductPageComponents/BannerSection/BannerSection";
 import SliderSection from "./ProductPageComponents/SliderSection/SliderSection";
 import BuyProductSection from "./ProductPageComponents/BuyProductSection/BuyProductSection";
+import FeaturesSection from "../../shared/FeaturesSection/FeaturesSection.jsx";
 import "./ProductPage.css";
-import FeaturesSection from "./ProductPageComponents/FeaturesSection/FeaturesSection";
 
 export default function ProductPage() {
   return (
@@ -23,7 +23,7 @@ export default function ProductPage() {
           </div>
         </div>
       </div>
-      <FeaturesSection/>
+      <FeaturesSection />
       <Footer />
     </ProductInteractionProvider>
   );

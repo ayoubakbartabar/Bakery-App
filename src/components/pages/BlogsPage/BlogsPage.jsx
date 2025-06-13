@@ -1,8 +1,15 @@
-import React from 'react'
-import Navbar from '../../shared/Navbar/Navbar'
-import './BlogsPage.css'
+import React from "react";
+import "./BlogsPage.css";
+import Navbar from "../../shared/Navbar/Navbar";
+import Footer from "../../shared/Footer/Footer";
+import { ProductInteractionProvider } from "../../shared/ProductInteractionContext/ProductInteractionContext";
+
 export default function BlogsPage() {
   return (
-    <Navbar/>
-  )
+    <ProductInteractionProvider>
+      <Navbar />
+
+      <Footer />
+    </ProductInteractionProvider>
+  );
 }
