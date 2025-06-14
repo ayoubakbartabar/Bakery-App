@@ -4,7 +4,7 @@ import "./BlogsHeaderSection.css";
 export default function BlogsHeaderSection() {
   return (
     <section className="blogs-header-section">
-        <h1 className="blogs-header-title">Products</h1>
+        <h1 className="blogs-header-title">News</h1>
         <span className="blogs-header-menu">
           <a href="/" className="blogs-header-link">
             HOME
