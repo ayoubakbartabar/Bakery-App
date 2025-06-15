@@ -15,7 +15,7 @@ export const ProductInteractionProvider = ({ children }) => {
   const toggleLike = (id) => {
     setLikedItems((prev) => ({
       ...prev,
-      [id]: !prev[id], // Flip true/false
+      [id]: !prev[id],
     }));
   };
 
@@ -51,10 +51,17 @@ export const ProductInteractionProvider = ({ children }) => {
     });
   };
 
-  // Provide state and functions to children components
+  const removeProduct = (id) => {
+    setBuyProducts((prev) => {
+      const updated = { ...prev };
+      delete updated[id];
+      return updated;
+    });
+  };
+
   return (
     <ProductInteractionContext.Provider
-      value={{ likedItems, toggleLike, buyProducts, buyProduct }}
+      value={{ likedItems, toggleLike, buyProducts, buyProduct, removeProduct }}
     >
       {children}
     </ProductInteractionContext.Provider>
