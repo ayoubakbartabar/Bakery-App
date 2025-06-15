@@ -4,16 +4,19 @@ import { RiShoppingBasket2Line } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { useProductInteraction } from "../ProductInteractionContext/ProductInteractionContext";
+import { IoCloseCircleSharp } from "react-icons/io5";
 
 import "./Navbar.css";
 import SearchModal from "./SearchModal/SearchModal";
 
 export default function Navbar() {
+  // Set Hook
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [cartHover, setCartHover] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const { buyProducts } = useProductInteraction();
+  // Use Context
+  const { buyProducts, removeProduct } = useProductInteraction();
 
   const cartItems = Object.values(buyProducts);
   const totalCount = cartItems.reduce((sum, item) => sum + item.count, 0);
@@ -108,6 +111,10 @@ export default function Navbar() {
                             {parseFloat(item.price.replace("$", "")).toFixed(2)}
                           </div>
                         </div>
+                        <IoCloseCircleSharp
+                          className="cart-item-remove-btn"
+                          onClick={() => removeProduct(item.id)}
+                        />
                       </div>
                     ))}
                     <div className="cart-subtotal">
