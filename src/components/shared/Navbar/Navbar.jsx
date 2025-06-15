@@ -25,12 +25,12 @@ export default function Navbar() {
   const leftMenu = [
     { id: 1, title: "ABOUT", href: "/about" },
     { id: 2, title: "PRODUCT", href: "/product" },
-    { id: 3, title: "PAGES", href: "/pages" },
+    { id: 3, title: "BLOGS", href: "/blogs" },
   ];
 
   const rightMenu = [
     { id: 4, title: "GALLERY", href: "/gallery" },
-    { id: 5, title: "BLOGS", href: "/blogs" },
+    { id: 5, title: "PAGES", href: "/pages" },
   ];
 
   return (
