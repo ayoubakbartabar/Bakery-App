@@ -134,7 +134,7 @@
 
 .cart-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
@@ -171,6 +171,10 @@
   padding: 0.6rem;
   border: none;
   border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-item-remove-btn {
   cursor: pointer;
 }
 
