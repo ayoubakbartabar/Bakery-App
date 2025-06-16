@@ -121,7 +121,9 @@ export default function Navbar() {
                       <span>Subtotal:</span>
                       <strong>${cartTotal.toFixed(2)}</strong>
                     </div>
-                    <button className="view-bag-btn">VIEW BAG</button>
+                    <Link className="view-bag-btn" to="/shoppingBag">
+                      VIEW BAG
+                    </Link>
                   </>
                 )}
               </div>
