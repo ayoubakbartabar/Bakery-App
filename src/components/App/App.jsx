@@ -3,8 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "../pages/HomePage/HomePage.jsx";
 import AboutPage from "../pages/AboutPage/AboutPage.jsx";
-import PagesPage from "../pages/PagesPage/PagesPage.jsx";
-import GalleryPage from "../pages/GalleryPage/GalleryPage.jsx";
 import BlogsPage from "../pages/BlogsPage/BlogsPage.jsx";
 import ContactPage from "../pages/ContactPage/ContactPage.jsx";
 import ProductPage from "../pages/ProductPage/ProductPage.jsx";

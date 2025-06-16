@@ -1,13 +1,17 @@
+import React from "react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import "./index.css";
+import { ProductInteractionProvider } from "./components/shared/ProductInteractionContext/ProductInteractionContext.jsx";
 import App from "./components/App/App.jsx";
+import "./index.css";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+ <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ProductInteractionProvider>
+        <App />
+      </ProductInteractionProvider>
     </BrowserRouter>
-  </StrictMode>
+  </React.StrictMode>
 );
