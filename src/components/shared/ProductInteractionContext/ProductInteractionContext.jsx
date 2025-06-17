@@ -1,63 +1,61 @@
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
-// Create a context for product interactions (likes and purchases)
+// Create a Context for product interactions (likes and purchases)
 const ProductInteractionContext = createContext();
 
 // Provider component to wrap around parts of the app that need product interaction state
 export const ProductInteractionProvider = ({ children }) => {
-  // State to track liked products by their IDs (boolean)
+  // Initialize buyProducts state by reading from localStorage if available
+  const [buyProducts, setBuyProducts] = useState(() => {
+    const saved = localStorage.getItem("buyProducts");
+    return saved ? JSON.parse(saved) : {};
+  });
+
+  // State to track liked products
   const [likedItems, setLikedItems] = useState({});
 
-  // State to track products added to cart with count and total price
-  const [buyProducts, setBuyProducts] = useState({});
-
-  // Toggle the liked status of a product by its ID
+  // Toggle like status for a given product ID
   const toggleLike = (id) => {
     setLikedItems((prev) => ({
       ...prev,
-      [id]: !prev[id],
+      [id]: !prev[id], // flip the like status
     }));
   };
 
-  // Add a product to the cart or increment its count if already added
+  // Add a product to the buyProducts state or increase its count if it already exists
   const buyProduct = (product) => {
     const unitPrice = parseFloat(product.price.replace("$", ""));
 
     setBuyProducts((prev) => {
-      const existingProduct = prev[product.id];
+      const existing = prev[product.id];
+      const count = existing ? existing.count + 1 : 1;
+      const price = parseFloat(product.price.replace("$", ""));
+      const totalPrice = (price * count).toFixed(2);
 
-      if (existingProduct) {
-        // If product already in cart, increase count and update total price
-        const newCount = existingProduct.count + 1;
-        return {
-          ...prev,
-          [product.id]: {
-            ...existingProduct,
-            count: newCount,
-            totalPrice: (unitPrice * newCount).toFixed(2),
-          },
-        };
-      }
-
-      // If product not in cart, add it with count 1 and totalPrice = unit price
       return {
         ...prev,
         [product.id]: {
           ...product,
-          count: 1,
-          totalPrice: unitPrice.toFixed(2),
+          count,
+          totalPrice,
         },
       };
     });
   };
 
+  // Remove a product from buyProducts by ID
   const removeProduct = (id) => {
     setBuyProducts((prev) => {
-      const updated = { ...prev };
-      delete updated[id];
-      return updated;
+      const newState = { ...prev };
+      delete newState[id];
+      return newState;
     });
   };
+
+  // Save the buyProducts state to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("buyProducts", JSON.stringify(buyProducts));
+  }, [buyProducts]);
 
   return (
     <ProductInteractionContext.Provider
@@ -68,6 +66,6 @@ export const ProductInteractionProvider = ({ children }) => {
   );
 };
 
-// Custom hook to easily access product interaction context in components
+// Custom hook to access the ProductInteractionContext easily
 export const useProductInteraction = () =>
   useContext(ProductInteractionContext);
