@@ -4,14 +4,16 @@ import { ProductInteractionProvider } from "../../shared/ProductInteractionConte
 import Navbar from "../../shared/Navbar/Navbar.jsx";
 import ShoppingBagHeaderSection from "./ShoppingBagComponents/ShoppingBagHeaderSection/ShoppingBagHeaderSection.jsx";
 import ProductTableSection from "./ShoppingBagComponents/ProductTableSection/ProductTableSection.jsx";
+import FeaturesSection from "../../shared/FeaturesSection/FeaturesSection.jsx";
 import Footer from "../../shared/Footer/Footer.jsx";
 
 export default function ShoppingBagPage() {
   return (
     <ProductInteractionProvider>
       <Navbar />
-        <ShoppingBagHeaderSection />
-        <ProductTableSection/>
+      <ShoppingBagHeaderSection />
+      <ProductTableSection />
+      <FeaturesSection />
       <Footer />
     </ProductInteractionProvider>
   );
