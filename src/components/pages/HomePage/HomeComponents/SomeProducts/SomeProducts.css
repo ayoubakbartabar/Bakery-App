@@ -17,10 +17,10 @@
 }
 
 .some-products-section-top-paragraph {
+    font-family: 'Georgia', serif;
     font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    color: var(--color-gray);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
 }
 
 .some-products-section-top-svg {
