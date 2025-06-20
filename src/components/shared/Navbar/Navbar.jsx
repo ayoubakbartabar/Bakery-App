@@ -95,7 +95,7 @@ export default function Navbar() {
                 {cartItems.length === 0 ? (
                   <div className="empty-version">
                     <p className="cart-empty">Your cart is currently empty.</p>
-                    <a href="/" className="continue-shopping">
+                    <a href="/product" className="continue-shopping">
                       Continue shopping
                     </a>
                   </div>
