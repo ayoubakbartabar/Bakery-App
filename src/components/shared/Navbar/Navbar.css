@@ -192,6 +192,7 @@
   display: flex;
   align-items: center;
   z-index: 20;
+  padding: 0.6rem 0.1rem;
 }
 
 .hamburger-icon {
@@ -222,12 +223,13 @@
 
 /* ----- Mobile Menu Panel ----- */
 .mobile-menu {
+  overflow-y: auto;
   position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
   width: 80%;
-  max-width: 320px;
+  max-width: 420px;
   background-color: white;
   z-index: 999;
   padding: 2rem 1.5rem;
@@ -286,5 +288,75 @@
 
   .navbar-logo img {
     height: 60px;
+  }
+}
+
+/* ===== Mobile Cart ===== */
+.mobile-cart-wrapper {
+  position: relative;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: left;
+}
+
+.mobile-cart-btn {
+  background-color: var(--color-gray-light);
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mobile-cart-dropdown {
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 400px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: -0.2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+.mobile-cart-dropdown .cart-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-cart-dropdown .cart-item img {
+  width: 60px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.mobile-cart-dropdown .cart-item-info {
+  flex: 1;
+}
+
+.mobile-cart-dropdown .cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.mobile-cart-dropdown .view-bag-btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .mobile-cart-wrapper {
+    display: none;
   }
 }

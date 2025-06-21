@@ -149,6 +149,55 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+          <li
+            className="mobile-cart-wrapper"
+            onMouseEnter={() => setCartHover(true)}
+            onMouseLeave={() => setCartHover(false)}
+          >
+            <button className="icon-btn cart mobile-cart-btn">
+              <RiShoppingBasket2Line className="shoppingIcon" />
+              <span className="badge">{totalCount}</span>
+            </button>
+
+            {cartHover && (
+              <div className="mobile-cart-dropdown">
+                {cartItems.length === 0 ? (
+                  <div className="empty-version">
+                    <p className="cart-empty">Your cart is currently empty.</p>
+                    <Link to="/product" className="continue-shopping">
+                      Continue shopping
+                    </Link>
+                  </div>
+                ) : (
+                  <>
+                    {cartItems.map((item) => (
+                      <div key={item.id} className="cart-item">
+                        <img src={item.image} alt={item.title} />
+                        <div className="cart-item-info">
+                          <p>{item.title}</p>
+                          <p>
+                            {item.count} × $
+                            {parseFloat(item.price.replace("$", "")).toFixed(2)}
+                          </p>
+                        </div>
+                        <IoCloseCircleSharp
+                          className="cart-item-remove-btn"
+                          onClick={() => removeProduct(item.id)}
+                        />
+                      </div>
+                    ))}
+                    <div className="cart-subtotal">
+                      <span>Subtotal:</span>
+                      <strong>${cartTotal.toFixed(2)}</strong>
+                    </div>
+                    <Link className="view-bag-btn" to="/shoppingBag">
+                      VIEW BAG
+                    </Link>
+                  </>
+                )}
+              </div>
+            )}
+          </li>
         </div>
       )}
 
