@@ -6,17 +6,18 @@
     background: #fff;
     max-width: 1600px;
     margin: 0 auto;
+    gap: 2rem;
 }
 
 .signature-section-img {
-    max-width: 500px;
+    max-width: 100%;
     height: auto;
+    object-fit: contain;
 }
 
 .signature-section-left-side {
-    max-width: 600px;
+    max-width: 700px;
     text-align: center;
-    margin-top: 2rem;
 }
 
 .signature-section-left-side-title {
@@ -30,14 +31,17 @@
 .signature-section-left-side-paragraph {
     margin-top: 1rem;
     color: #777;
+    font-size: 1rem;
 }
 
 .signature-section-left-side-image {
     margin-top: 1rem;
     max-height: 48px;
+    height: auto;
+    width: auto;
 }
 
-/* Responsive */
+/* Responsive: Desktop */
 @media (min-width: 1065px) {
     .signature-section {
         flex-direction: row;
@@ -45,12 +49,27 @@
         text-align: left;
     }
 
+    .signature-section-left-side {
+        text-align: left;
+        margin-left: 2rem;
+    }
+
     .signature-section-img {
-        max-width: 800px;
+        max-width: 50%;
     }
 
     .signature-section-left-side {
-        margin-top: 0;
-        margin-left: 2rem;
+        max-width: 50%;
+    }
+}
+
+/* Responsive: Tablets */
+@media (max-width: 768px) {
+    .signature-section-left-side-title {
+        font-size: 1rem;
+    }
+
+    .signature-section-left-side-paragraph {
+        font-size: 0.95rem;
     }
 }

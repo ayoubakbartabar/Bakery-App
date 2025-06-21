@@ -6,9 +6,10 @@ export default function SignatureSection() {
     <section className="signature-section">
       <img
         className="signature-section-img"
-        src="src\assets\images\signature_grande.webp"
-        alt="signature image"
+        src="/src/assets/images/signature_grande.webp"
+        alt="Butter cream frosting image"
       />
+
       <div className="signature-section-left-side">
         <h2 className="signature-section-left-side-title">
           “It seems that every country that can get its hands on butter has its
@@ -20,8 +21,8 @@ export default function SignatureSection() {
         </p>
         <img
           className="signature-section-left-side-image"
-          src="src\assets\images\signature-2_grande.png"
-          alt="signature svg"
+          src="/src/assets/images/signature-2_grande.png"
+          alt="CEO Signature"
         />
       </div>
     </section>
