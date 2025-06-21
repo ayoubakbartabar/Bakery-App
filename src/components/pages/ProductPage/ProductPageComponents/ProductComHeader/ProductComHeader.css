@@ -1,4 +1,4 @@
-.product-com-header{
+.product-com-header {
     max-width: 1600px;
     margin: 2.5rem auto;
     background-image: url("src/assets/images/product.jpg");
@@ -14,7 +14,7 @@
 }
 
 .product-header-title {
-    font-size: 5rem;
+    font-size: clamp(3rem, 5.5vw, 5rem);
 }
 
 .product-header-menu {
