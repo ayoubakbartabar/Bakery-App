@@ -56,51 +56,55 @@ export default function HistorySection() {
   };
 
   return (
-    <section className="history-section">
-      <h2 className="history-title">Our History</h2>
-      <p className="history-subtitle">LIVE WITH PASSION</p>
-      <img
-        className="some-products-section-top-svg"
-        src="src/assets/images/floral_grande.avif"
-        alt="floral decoration"
-      />
+    <div className="history-section-bg">
+      <section className="history-section">
+        <h2 className="history-title">Our History</h2>
+        <p className="history-subtitle">LIVE WITH PASSION</p>
+        <img
+          className="some-products-section-top-svg"
+          src="src/assets/images/floral_grande.avif"
+          alt="floral decoration"
+        />
 
-      <div
-        className="slider-container"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-      >
-        <div className="slider-track no-scroll">
-          {getVisibleItems().map((item) => (
-            <article
-              key={item.id}
-              className="history-card"
-              aria-label={item.title}
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="history-image"
-              />
-              <p className="history-date">{item.date}</p>
-              <h3 className="history-card-title">{item.title.toUpperCase()}</h3>
-              <p className="history-author">
-                By <span>{item.author}</span>
-              </p>
-              <p className="history-paragraph">{item.paragraph}</p>
-              <a
-                href="#"
-                className="read-more"
-                aria-label={`Read more about ${item.title}`}
+        <div
+          className="slider-container"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+        >
+          <div className="slider-track no-scroll">
+            {getVisibleItems().map((item) => (
+              <article
+                key={item.id}
+                className="history-card"
+                aria-label={item.title}
               >
-                READ MORE
-              </a>
-            </article>
-          ))}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="history-image"
+                />
+                <p className="history-date">{item.date}</p>
+                <h3 className="history-card-title">
+                  {item.title.toUpperCase()}
+                </h3>
+                <p className="history-author">
+                  By <span>{item.author}</span>
+                </p>
+                <p className="history-paragraph">{item.paragraph}</p>
+                <a
+                  href="#"
+                  className="read-more"
+                  aria-label={`Read more about ${item.title}`}
+                >
+                  READ MORE
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
