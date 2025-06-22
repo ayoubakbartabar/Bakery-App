@@ -9,14 +9,13 @@ import {
 } from "react-icons/md";
 
 export default function ShopifySection() {
-
   // set Hook
   const [current, setCurrent] = useState(0);
   const [clicked, setClicked] = useState(false);
   const length = ShopifyData.length;
   // set UseRef
   const startX = useRef(null);
-  // create  add to cart function 
+  // create  add to cart function
   const handleClick = () => {
     if (clicked) return;
     setClicked(true);
@@ -55,42 +54,44 @@ export default function ShopifySection() {
   };
 
   return (
-    <section className="shopify-section">
-      <div
-        className="slider-container"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        {/* Hide arrows on mobile */}
-        <button className="nav-button left">
-          <MdOutlineKeyboardArrowLeft size={32} onClick={prevSlider} />
+    <div className="shopify-section-bg">
+      <section className="shopify-section">
+        <div
+          className="slider-container"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Hide arrows on mobile */}
+          <button className="nav-button left">
+            <MdOutlineKeyboardArrowLeft size={32} onClick={prevSlider} />
+          </button>
+
+          {ShopifyData.map((item, index) => (
+            <div
+              key={item.id}
+              className={`slider-item ${
+                index === current ? "active" : "inactive"
+              }`}
+            >
+              <img className="slider-image" src={item.img} alt={item.alt} />
+            </div>
+          ))}
+
+          <button className="nav-button right">
+            <MdOutlineKeyboardArrowRight size={32} onClick={nextSlider} />
+          </button>
+        </div>
+
+        <button
+          className={`add-to-cart ${clicked ? "clicked" : ""}`}
+          onClick={handleClick}
+        >
+          <span className="cart-text">ADD TO CART</span>
+          <MdOutlineShoppingCart
+            className={`cart-icon ${clicked ? "exit-right" : ""}`}
+          />
         </button>
-
-        {ShopifyData.map((item, index) => (
-          <div
-            key={item.id}
-            className={`slider-item ${
-              index === current ? "active" : "inactive"
-            }`}
-          >
-            <img className="slider-image" src={item.img} alt={item.alt} />
-          </div>
-        ))}
-
-        <button className="nav-button right">
-          <MdOutlineKeyboardArrowRight size={32} onClick={nextSlider} />
-        </button>
-      </div>
-
-      <button
-        className={`add-to-cart ${clicked ? "clicked" : ""}`}
-        onClick={handleClick}
-      >
-        <span className="cart-text">ADD TO CART</span>
-        <MdOutlineShoppingCart
-          className={`cart-icon ${clicked ? "exit-right" : ""}`}
-        />
-      </button>
-    </section>
+      </section>
+    </div>
   );
 }
