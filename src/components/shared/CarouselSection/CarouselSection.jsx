@@ -56,7 +56,8 @@ export default function CarouselSection() {
   };
 
   return (
-    <section className="carousel-section">
+    <div className="carousel-section-bg">
+      <section className="carousel-section">
       <div
         className={`carousel-container ${animating ? "zoom-z" : ""}`}
         onTouchStart={handleTouchStart}
@@ -93,5 +94,6 @@ export default function CarouselSection() {
         </div>
       </div>
     </section>
+    </div>
   );
 }

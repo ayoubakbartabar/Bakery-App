@@ -1,5 +1,8 @@
-.footer-section {
+.footer-section-bg {
   background: #1f1d2b;
+}
+
+.footer-section {
   color: #fff;
   padding: 4rem 2rem 2rem;
   max-width: 1600px;

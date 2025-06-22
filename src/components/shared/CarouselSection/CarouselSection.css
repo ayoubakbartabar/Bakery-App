@@ -1,5 +1,8 @@
-.carousel-section {
+.carousel-section-bg {
     background: url('src/assets/images/testimonials.jpg') no-repeat center center/cover;
+}
+
+.carousel-section {
     padding: 8rem 1rem;
     display: flex;
     justify-content: center;

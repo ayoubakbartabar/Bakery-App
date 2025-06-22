@@ -1,7 +1,10 @@
+.welcome-section-bg {
+    background-color: #fff;
+}
+
 .welcome-section {
     padding: 4rem 2rem;
     text-align: center;
-    background-color: #fff;
     max-width: 1600px;
     margin: 2rem auto;
 }
@@ -49,11 +52,11 @@
 .welcome-section-box-title {
     font-weight: 700;
     font-size: 1.1rem;
-    margin-top: 1rem ;
+    margin-top: 1rem;
 }
 
 .welcome-section-box-date {
-    margin-bottom: 1rem ;
+    margin-bottom: 1rem;
     font-weight: 400;
     font-size: 1rem;
     font-family: Lato;

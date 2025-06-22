@@ -37,7 +37,7 @@ export default function Navbar() {
   ];
 
   return (
-    <>
+    <div className="nav-bar-section-bg">
       <nav className="navbar">
         <button
           className="mobile-menu-btn"
@@ -202,6 +202,6 @@ export default function Navbar() {
       )}
 
       {isSearchOpen && <SearchModal onClose={() => setIsSearchOpen(false)} />}
-    </>
+    </div>
   );
 }
