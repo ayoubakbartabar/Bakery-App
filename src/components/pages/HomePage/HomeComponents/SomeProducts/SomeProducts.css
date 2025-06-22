@@ -1,13 +1,16 @@
-.some-products-section {
-    padding: 4rem 2rem;
-    background-color: #fff;
-    text-align: center;
-    max-width: 1600px;
-    margin: 0 auto;
+.some-product-bg {
     background-image: url('src/assets/images/home-product.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: #fff;
+}
+
+.some-products-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .some-products-section-top-title {
