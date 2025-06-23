@@ -1,10 +1,13 @@
+.about-number-bg {
+    background-color: #f8f8f8;
+}
+
 .about-number-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5rem;
     padding: 3rem 1rem;
-    background-color: #f8f8f8;
     max-width: 1600px;
     margin: 0 auto;
 }
