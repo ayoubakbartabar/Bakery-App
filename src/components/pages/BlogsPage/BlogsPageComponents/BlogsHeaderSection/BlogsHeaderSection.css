@@ -1,10 +1,13 @@
+.blogs-header-bg {
+    background-image: url("src/assets/images/blog.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .blogs-header-section {
     max-width: 1600px;
     margin: 2.5rem auto;
-    background-image: url("src/assets/images/blog.webp");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-clip: border-box;
     position: relative;
     padding: 5rem 2rem;
     color: var(--color-black);

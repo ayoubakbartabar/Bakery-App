@@ -1,3 +1,7 @@
+.features-section-bg {
+    background-color: #f8f8f8;
+}
+
 .features-section {
     display: flex;
     justify-content: center;
@@ -5,7 +9,6 @@
     flex-wrap: wrap;
     gap: 2rem;
     padding: 4rem 2rem;
-    background-color: #f8f8f8;
     margin: 0 auto;
     max-width: 1600px;
 }
