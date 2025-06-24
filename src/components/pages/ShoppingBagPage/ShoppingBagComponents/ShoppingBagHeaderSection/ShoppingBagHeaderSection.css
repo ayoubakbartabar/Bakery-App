@@ -1,10 +1,14 @@
-.shopping-bag-header-section {
-    max-width: 1600px;
-    margin: 2.5rem auto;
+.shopping-bag-header-section-bg {
     background-image: url("src/assets/images/product.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-clip: border-box;
+    background-size: cover;
+}
+
+.shopping-bag-header-section {
+    max-width: 1600px;
+    margin: 2.5rem auto;
     position: relative;
     padding: 5rem 2rem;
     color: var(--color-black);
