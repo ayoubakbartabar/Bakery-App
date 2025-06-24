@@ -1,7 +1,10 @@
+.blogs-section-bg {
+    background-color: var(--color-white);
+}
+
 .blogs-section {
     padding: 4rem 2rem;
     text-align: center;
-    background-color: var(--color-white);
     max-width: 1600px;
     margin: 0 auto;
     display: grid;
