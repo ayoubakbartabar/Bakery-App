@@ -3,17 +3,24 @@ import "./ProductTableSection.css";
 import { useProductInteraction } from "../../../../shared/ProductInteractionContext/ProductInteractionContext";
 
 export default function ProductTableSection() {
-  // Access buyProducts and removeProduct function from context
-  const { buyProducts, removeProduct } = useProductInteraction();
+  // Get product interaction functions and states from context
+  const { buyProducts, removeProduct, setProductCount } =
+    useProductInteraction();
 
   // Convert buyProducts object to an array for easier mapping
   const productsArray = Object.values(buyProducts);
 
-  // Calculate subtotal by summing totalPrice of each product
+  // Calculate subtotal by summing totalPrice of all products
   const subtotal = productsArray.reduce(
     (sum, p) => sum + parseFloat(p.totalPrice),
     0
   );
+
+  // Handler to update product quantity, ensuring count >= 1
+  const handleQuantityChange = (productId, newCount) => {
+    if (newCount < 1 || isNaN(newCount)) return; // Prevent invalid values
+    setProductCount(productId, newCount);
+  };
 
   return (
     <div className="product-table-section-bg">
@@ -29,33 +36,39 @@ export default function ProductTableSection() {
             </tr>
           </thead>
           <tbody>
-            {productsArray.map((product) => {
-              return (
-                <tr className="cart-row" key={product.id}>
-                  <td className="product-info">
-                    <img src={product.image} alt={product.name} />
-                    <div>
-                      <p className="product-name">{product.name}</p>
-                    </div>
-                  </td>
-                  <td className="price">
-                    ${parseFloat(product.price.replace("$", "")).toFixed(2)}
-                  </td>
-
-                  <td className="quantity-cell">{product.count}</td>
-
-                  <td className="total">${product.totalPrice}</td>
-                  <td>
-                    <button
-                      className="remove-btn"
-                      onClick={() => removeProduct(product.id)}
-                    >
-                      Remove
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
+            {productsArray.map((product) => (
+              <tr className="cart-row" key={product.id}>
+                <td className="product-info">
+                  <img src={product.image} alt={product.name} />
+                  <div>
+                    <p className="product-name">{product.name}</p>
+                  </div>
+                </td>
+                <td className="price">
+                  ${parseFloat(product.price.replace("$", "")).toFixed(2)}
+                </td>
+                <td className="quantity-cell">
+                  <input
+                    type="number"
+                    className="quantity-input"
+                    value={product.count}
+                    min={1}
+                    onChange={(e) =>
+                      handleQuantityChange(product.id, parseInt(e.target.value))
+                    }
+                  />
+                </td>
+                <td className="total">${product.totalPrice}</td>
+                <td>
+                  <button
+                    className="remove-btn"
+                    onClick={() => removeProduct(product.id)}
+                  >
+                    Remove
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
 
