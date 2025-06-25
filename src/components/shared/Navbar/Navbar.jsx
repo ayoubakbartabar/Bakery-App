@@ -10,12 +10,12 @@ import "./Navbar.css";
 import SearchModal from "./SearchModal/SearchModal";
 
 export default function Navbar() {
-  // Set Hook
+  // State hooks
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [cartHover, setCartHover] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Use Context
+  // Context
   const { buyProducts, removeProduct } = useProductInteraction();
 
   const cartItems = Object.values(buyProducts);
@@ -35,6 +35,11 @@ export default function Navbar() {
     { id: 4, title: "GALLERY", href: "/gallery" },
     { id: 5, title: "PAGES", href: "/pages" },
   ];
+
+  // Toggle cart open/close on click
+  function toggleCart() {
+    setIsCartOpen(!isCartOpen);
+  }
 
   return (
     <div className="nav-bar-section-bg">
@@ -80,17 +85,13 @@ export default function Navbar() {
             </button>
           </li>
 
-          <li
-            className="cart-wrapper"
-            onMouseEnter={() => setCartHover(true)}
-            onMouseLeave={() => setCartHover(false)}
-          >
-            <button className="icon-btn cart">
+          <li className="cart-wrapper">
+            <button className="icon-btn cart" onClick={toggleCart}>
               <RiShoppingBasket2Line className="shoppingIcon" />
               <span className="badge">{totalCount}</span>
             </button>
 
-            {cartHover && (
+            {isCartOpen && (
               <div className="cart-dropdown">
                 {cartItems.length === 0 ? (
                   <div className="empty-version">
@@ -149,17 +150,16 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <li
-            className="mobile-cart-wrapper"
-            onMouseEnter={() => setCartHover(true)}
-            onMouseLeave={() => setCartHover(false)}
-          >
-            <button className="icon-btn cart mobile-cart-btn">
+          <li className="mobile-cart-wrapper">
+            <button
+              className="icon-btn cart mobile-cart-btn"
+              onClick={toggleCart}
+            >
               <RiShoppingBasket2Line className="shoppingIcon" />
               <span className="badge">{totalCount}</span>
             </button>
 
-            {cartHover && (
+            {isCartOpen && (
               <div className="mobile-cart-dropdown">
                 {cartItems.length === 0 ? (
                   <div className="empty-version">
