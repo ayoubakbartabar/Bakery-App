@@ -11,7 +11,7 @@ export const ProductInteractionProvider = ({ children }) => {
     return saved ? JSON.parse(saved) : {};
   });
 
-  // State to track liked products
+  // State to track liked products by their IDs
   const [likedItems, setLikedItems] = useState({});
 
   // Toggle like status for a given product ID
@@ -22,15 +22,14 @@ export const ProductInteractionProvider = ({ children }) => {
     }));
   };
 
-  // Add a product to the buyProducts state or increase its count if it already exists
+  // Add a product to buyProducts or increase its count by 1 if it already exists
   const buyProduct = (product) => {
     const unitPrice = parseFloat(product.price.replace("$", ""));
 
     setBuyProducts((prev) => {
       const existing = prev[product.id];
       const count = existing ? existing.count + 1 : 1;
-      const price = parseFloat(product.price.replace("$", ""));
-      const totalPrice = (price * count).toFixed(2);
+      const totalPrice = (unitPrice * count).toFixed(2);
 
       return {
         ...prev,
@@ -52,14 +51,43 @@ export const ProductInteractionProvider = ({ children }) => {
     });
   };
 
-  // Save the buyProducts state to localStorage whenever it changes
+  // Update product count and total price directly
+  const setProductCount = (productId, count) => {
+    if (count < 1) return; // prevent invalid count
+
+    setBuyProducts((prev) => {
+      const product = prev[productId];
+      if (!product) return prev;
+
+      const unitPrice = parseFloat(product.price.replace("$", ""));
+      const totalPrice = (unitPrice * count).toFixed(2);
+
+      return {
+        ...prev,
+        [productId]: {
+          ...product,
+          count,
+          totalPrice,
+        },
+      };
+    });
+  };
+
+  // Save buyProducts state to localStorage on every change
   useEffect(() => {
     localStorage.setItem("buyProducts", JSON.stringify(buyProducts));
   }, [buyProducts]);
 
   return (
     <ProductInteractionContext.Provider
-      value={{ likedItems, toggleLike, buyProducts, buyProduct, removeProduct }}
+      value={{
+        likedItems,
+        toggleLike,
+        buyProducts,
+        buyProduct,
+        removeProduct,
+        setProductCount, // expose the setter to update quantity
+      }}
     >
       {children}
     </ProductInteractionContext.Provider>
