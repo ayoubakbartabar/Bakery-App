@@ -1,8 +1,10 @@
 import React from "react";
 import "./ProductTableSection.css";
 import { useProductInteraction } from "../../../../shared/ProductInteractionContext/ProductInteractionContext";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductTableSection() {
+  const navigate = useNavigate();
   // Get product interaction functions and states from context
   const { buyProducts, removeProduct, setProductCount } =
     useProductInteraction();
@@ -20,6 +22,11 @@ export default function ProductTableSection() {
   const handleQuantityChange = (productId, newCount) => {
     if (newCount < 1 || isNaN(newCount)) return; // Prevent invalid values
     setProductCount(productId, newCount);
+  };
+
+  // Handler for UPDATE button click - navigate to /product page
+  const handleUpdateClick = () => {
+    navigate("/product");
   };
 
   return (
@@ -80,7 +87,9 @@ export default function ProductTableSection() {
           <p className="note">Shipping & taxes calculated at checkout</p>
           <div className="cart-buttons">
             <button className="gold-btn">CONTINUE SHOPPING</button>
-            <button className="gold-btn">UPDATE</button>
+            <button className="gold-btn" onClick={handleUpdateClick}>
+              UPDATE
+            </button>
             <button className="gold-btn">CHECK OUT</button>
           </div>
         </div>
