@@ -29,24 +29,28 @@
 .our-chef-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 100px;
+    gap: 60px;
     max-width: 1350px;
     margin: 2rem auto;
-    align-items: start;
     padding: 0 20px;
+    align-items: start;
 }
 
 .our-chef-card {
     display: flex;
+    flex-direction: row;
     gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: flex-start;
     text-align: left;
 }
 
 .our-chef-image {
-    width: 300px;
+    width: 260px;
     height: auto;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
     flex-shrink: 0;
 }
 
@@ -56,7 +60,6 @@
     flex-direction: column;
     justify-content: space-between;
 }
-
 
 .our-chef-name {
     font-size: 20px;
@@ -89,6 +92,7 @@
     font-size: 14px;
     color: #222;
     line-height: 1.5;
+    text-align: left;
 }
 
 .our-chef-icons {
@@ -115,41 +119,58 @@
     color: #fff;
 }
 
-
-@media (min-width: 1200px) {
-    .our-chef-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
+/* Tablet - max 1200px */
 @media (max-width: 1200px) {
-
-    .our-chef-card {
-        display: flex;
-        gap: 20px;
-        text-align: left;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    .our-chef-grid {
+        grid-template-columns: 1fr;
     }
 
+    .our-chef-card {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+
+    .our-chef-contact {
+        text-align: left;
+    }
+
+    .our-chef-info {
+        align-items: flex-start;
+    }
+
+    .our-chef-icons {
+        justify-content: flex-start;
+    }
 }
 
+/* Mobile - max 800px */
 @media (max-width: 800px) {
-    .our-chef-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
     .our-chef-card {
-        display: flex;
-        gap: 20px;
-        text-align: left;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        text-align: center;
     }
 
     .our-chef-image {
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 15px;
+    }
+
+    .our-chef-info {
+        align-items: center;
+    }
+
+    .our-chef-contact {
+        text-align: center;
+    }
+
+    .our-chef-icons {
+        justify-content: center;
+    }
+
+    .our-chef-divider {
+        display: none;
     }
 }
