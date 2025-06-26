@@ -227,7 +227,7 @@
   top: 0;
   right: 0;
   overflow-y: auto;
-  max-height: 100vh;
+  height: 100vh;
   width: 80%;
   max-width: 420px;
   background-color: white;
@@ -314,7 +314,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 90vw;
-  max-width: 400px;
+  max-width: 380px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;

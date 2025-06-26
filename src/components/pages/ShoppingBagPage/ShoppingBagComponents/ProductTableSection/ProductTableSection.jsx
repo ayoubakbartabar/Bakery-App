@@ -84,7 +84,7 @@ export default function ProductTableSection() {
         {/* Mobile Card View */}
         <div className="cart-responsive product-table-mobile-only">
           {productsArray.map((product) => (
-            <div className="cart-item" key={product.id}>
+            <div className="product-table-cart-item" key={product.id}>
               <div className="cart-product">
                 <img src={product.image} alt={product.name} />
                 <p className="product-name">{product.name}</p>
