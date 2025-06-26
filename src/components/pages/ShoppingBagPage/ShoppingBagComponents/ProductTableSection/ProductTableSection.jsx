@@ -4,6 +4,7 @@ import { useProductInteraction } from "../../../../shared/ProductInteractionCont
 import { useNavigate } from "react-router-dom";
 
 export default function ProductTableSection() {
+  // set Navigate
   const navigate = useNavigate();
   // Get product interaction functions and states from context
   const { buyProducts, removeProduct, setProductCount } =
@@ -20,7 +21,7 @@ export default function ProductTableSection() {
 
   // Handler to update product quantity, ensuring count >= 1
   const handleQuantityChange = (productId, newCount) => {
-    if (newCount < 1 || isNaN(newCount)) return; // Prevent invalid values
+    if (newCount < 1 || isNaN(newCount)) return;
     setProductCount(productId, newCount);
   };
 
@@ -32,7 +33,8 @@ export default function ProductTableSection() {
   return (
     <div className="product-table-section-bg">
       <section className="product-table-section">
-        <table className="cart-table">
+        {/* Desktop Table View */}
+        <table className="cart-table desktop-only">
           <thead>
             <tr className="cart-header">
               <th>Product</th>
@@ -79,6 +81,44 @@ export default function ProductTableSection() {
           </tbody>
         </table>
 
+        {/* Mobile Card View */}
+        <div className="cart-responsive mobile-only">
+          {productsArray.map((product) => (
+            <div className="cart-item" key={product.id}>
+              <div className="cart-product">
+                <img src={product.image} alt={product.name} />
+                <p className="product-name">{product.name}</p>
+              </div>
+              <div className="cart-details">
+                <p>
+                  Price: $
+                  {parseFloat(product.price.replace("$", "")).toFixed(2)}
+                </p>
+                <p>
+                  Quantity:
+                  <input
+                    type="number"
+                    className="quantity-input"
+                    value={product.count}
+                    min={1}
+                    onChange={(e) =>
+                      handleQuantityChange(product.id, parseInt(e.target.value))
+                    }
+                  />
+                </p>
+                <p>Total: ${product.totalPrice}</p>
+                <button
+                  className="remove-btn"
+                  onClick={() => removeProduct(product.id)}
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Footer */}
         <div className="cart-footer">
           <div className="subtotal">
             <span>Subtotal</span>
@@ -86,7 +126,9 @@ export default function ProductTableSection() {
           </div>
           <p className="note">Shipping & taxes calculated at checkout</p>
           <div className="cart-buttons">
-            <button className="gold-btn">CONTINUE SHOPPING</button>
+            <button className="gold-btn" onClick={handleUpdateClick}>
+              CONTINUE SHOPPING
+            </button>
             <button className="gold-btn" onClick={handleUpdateClick}>
               UPDATE
             </button>
