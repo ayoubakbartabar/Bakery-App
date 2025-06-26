@@ -116,11 +116,11 @@
 
 /* ----------- MOBILE VIEW ----------- */
 @media (max-width: 768px) {
-    .desktop-only {
+    .product-table-desktop-only {
         display: none !important;
     }
 
-    .mobile-only {
+    .product-table-mobile-only {
         display: flex !important;
         flex-direction: column;
         gap: 1.2rem;
@@ -211,10 +211,10 @@
     }
 }
 
-.desktop-only {
+.product-table-desktop-only {
     display: table;
 }
 
-.mobile-only {
+.product-table-mobile-only {
     display: none;
 }

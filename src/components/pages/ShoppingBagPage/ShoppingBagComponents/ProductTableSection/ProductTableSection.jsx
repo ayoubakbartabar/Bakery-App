@@ -34,7 +34,7 @@ export default function ProductTableSection() {
     <div className="product-table-section-bg">
       <section className="product-table-section">
         {/* Desktop Table View */}
-        <table className="cart-table desktop-only">
+        <table className="cart-table product-table-desktop-only ">
           <thead>
             <tr className="cart-header">
               <th>Product</th>
@@ -82,7 +82,7 @@ export default function ProductTableSection() {
         </table>
 
         {/* Mobile Card View */}
-        <div className="cart-responsive mobile-only">
+        <div className="cart-responsive product-table-mobile-only">
           {productsArray.map((product) => (
             <div className="cart-item" key={product.id}>
               <div className="cart-product">
