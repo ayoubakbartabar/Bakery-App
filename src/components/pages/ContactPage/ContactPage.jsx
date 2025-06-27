@@ -1,9 +1,11 @@
-import React from 'react'
-import Navbar from '../../shared/Navbar/Navbar'
-import './ContactPage.css'
+import React from "react";
+import { ProductInteractionProvider } from "../../shared/ProductInteractionContext/ProductInteractionContext";
+import "./ContactPage.css";
 
 export default function ContactPage() {
   return (
-    <Navbar/>
-  )
+    <ProductInteractionProvider>
+
+    </ProductInteractionProvider>
+  );
 }
