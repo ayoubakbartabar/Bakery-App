@@ -1,0 +1,136 @@
+.contact-form-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 60px 20px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1600px;
+}
+
+.contact-form-wrapper {
+    flex: 1;
+    min-width: 320px;
+    max-width: 600px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-label {
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+.contact-form-input,
+.contact-form-textarea {
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background-color: #faf7f3;
+}
+
+.contact-form-textarea {
+    resize: vertical;
+    width: 100%;
+}
+
+.contact-form-input:focus,
+.contact-form-textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.contact-form-button {
+    margin-top: 10px;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form-button:hover {
+    background: #dfb200;
+}
+
+.contact-us-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    flex: 1;
+    min-width: 300px;
+    max-width: 650px;
+}
+
+.contact-us-info-box {
+    padding: 1rem;
+}
+
+.contact-us-info-title {
+    color: var(--color-black);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact-us-info-item {
+    display: flex;
+    align-items: center;
+    color: #555;
+    gap: 8px;
+    margin: 6px 0;
+    font-size: 0.95rem;
+}
+
+.contact-us-info-icon {
+    font-size: 1.2rem;
+    color: #141414;
+}
+
+.contact-social {
+    padding: 10px 0;
+}
+
+.contact-social-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.contact-social-icon {
+    font-size: 1.5rem;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.contact-social-icon:hover {
+    color: #007bff;
+}
