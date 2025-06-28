@@ -3,7 +3,7 @@ import './ContactMapSection.css'
 
 export default function ContactMapSection() {
   return (
-    <div>
+    <div className='contact-map-bg'>
         
     </div>
   )
