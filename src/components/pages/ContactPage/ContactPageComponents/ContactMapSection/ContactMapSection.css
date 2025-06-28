@@ -1,0 +1,11 @@
+.contact-map-bg {
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+}
+
+.contact-map-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
