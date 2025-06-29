@@ -98,4 +98,11 @@
     .some-products-box-buttons {
         flex-direction: row;
     }
+
+    .product-box{
+        padding: 1.2rem;
+    }
+    .buy-product-section{
+        padding: 0;
+    }
 }
