@@ -32,8 +32,8 @@ export default function Navbar() {
   ];
 
   const rightMenu = [
-    { id: 4, title: "GALLERY", href: "/gallery" },
-    { id: 5, title: "CONTACT", href: "/contact" },
+    { id: 4, title: "CONTACT", href: "/contact" },
+    { id: 5, title: "GALLERY", href: "/gallery" },
   ];
 
   // Toggle cart open/close on click
