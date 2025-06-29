@@ -1,5 +1,5 @@
 .carousel-section-bg {
-    background: url('src/assets/images/testimonials.jpg') no-repeat center center/cover;
+    background: url('/images/testimonials.jpg') no-repeat center center/cover;
 }
 
 .carousel-section {

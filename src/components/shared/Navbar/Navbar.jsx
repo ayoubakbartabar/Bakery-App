@@ -53,7 +53,7 @@ export default function Navbar() {
 
         <div className="navbar-logo">
           <Link to="/">
-            <img src="src/assets/images/navbar-logo.avif" alt="Logo" />
+            <img src="/images/navbar-logo.avif" alt="Logo" />
           </Link>
         </div>
 

@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="footer-brand">
             <img
               className="logo-circle"
-              src="src\assets\images\logo-light.webp"
+              src="/images/logo-light.webp"
               alt=""
             />
             <p className="footer-description">

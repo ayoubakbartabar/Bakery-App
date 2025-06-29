@@ -11,7 +11,7 @@ export default function WelcomeSection() {
           <p className="welcome-section-top-paragraph">WELCOME TO THE STORE</p>
           <img
             className="welcome-section-top-img"
-            src="src/assets/images/floral_grande.avif"
+            src="/images/floral_grande.avif"
             alt="floral_grande"
           />
         </div>

@@ -1,7 +1,7 @@
 const FeaturesData = [
   {
     id: 1,
-    svg: "src/assets/images/fast-delivery.png",
+    svg: "/images/fast-delivery.png",
     title: "Free Shipping",
     detail: "ON ORDER OVER$199",
     paragraph:
@@ -9,7 +9,7 @@ const FeaturesData = [
   },
   {
     id: 2,
-    svg: "src/assets/images/chef.png",
+    svg: "/images/chef.png",
     title: "Free Shipping",
     detail: "ON ORDER OVER$199",
     paragraph:
@@ -17,7 +17,7 @@ const FeaturesData = [
   },
   {
     id: 3,
-    svg: "src/assets/images/flour.png",
+    svg: "/images/flour.png",
     title: "Free Shipping",
     detail: "ON ORDER OVER$199",
     paragraph:
@@ -25,7 +25,7 @@ const FeaturesData = [
   },
   {
     id: 4,
-    svg: "src/assets/images/croissant.png",
+    svg: "/images/croissant.png",
     title: "Free Shipping",
     detail: "ON ORDER OVER$199",
     paragraph:
