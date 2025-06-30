@@ -55,7 +55,7 @@
     display: block;
     width: 100%;
     height: 250px;
-    background-image: url("/src/assets/images/widget-ads_grande.jpg");
+    background-image: url("/images/widget-ads_grande.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 8px;
