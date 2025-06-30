@@ -21,7 +21,7 @@ export default function SomeProducts() {
           </p>
           <img
             className="some-products-section-top-svg"
-            src="src/assets/images/floral_grande.avif"
+            src="/images/floral_grande.avif"
             alt="floral decoration"
           />
         </div>

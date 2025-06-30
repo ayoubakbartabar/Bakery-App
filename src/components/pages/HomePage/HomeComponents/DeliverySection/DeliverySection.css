@@ -1,12 +1,12 @@
 .delivery-section-bg {
-    background: url('src/assets/images/delivery-form.webp') no-repeat center center/cover;
+    background: url('/images/delivery-form.webp') no-repeat center center/cover;
 }
 
 .delivery-section {
     position: relative;
     padding: 5rem 2rem;
     color: var(--color-white);
-    /* max-width: 1600px; */
+    max-width: 1600px;
     margin: 0 auto;
 }
 

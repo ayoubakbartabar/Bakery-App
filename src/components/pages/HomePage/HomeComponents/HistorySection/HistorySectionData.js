@@ -2,7 +2,7 @@ const HistorySectionData = [
   {
     id: 1,
     image:
-      "src/assets/images/list-1_bc112ca9-155f-455a-b221-f86488c6cc93_450x400_crop_center.jpg",
+      "/images/list-1_bc112ca9-155f-455a-b221-f86488c6cc93_450x400_crop_center.jpg",
     date: "Aug 20, 2018",
     title: "Design Your Own Cake",
     author: "duong ninh",
@@ -11,7 +11,7 @@ const HistorySectionData = [
   },
   {
     id: 2,
-    image: "src/assets/images/single_450x400_crop_center.jpg",
+    image: "/images/single_450x400_crop_center.jpg",
     date: "Jul 25, 2018",
     title: "Pumpkin buns with salte",
     author: "duong ninh",
@@ -20,7 +20,7 @@ const HistorySectionData = [
   },
   {
     id: 3,
-    image: "src/assets/images/list-4_450x400_crop_center.jpg",
+    image: "/images/list-4_450x400_crop_center.jpg",
     date: "Jul 5, 2018",
     title: "Design Your Own Cake",
     author: "duong ninh",
@@ -29,7 +29,7 @@ const HistorySectionData = [
   },
   {
     id: 4,
-    image: "src/assets/images/list-3_450x400_crop_center.webp",
+    image: "/images/list-3_450x400_crop_center.webp",
     date: "Jul 5, 2018",
     title: "BUTTERY TOAST",
     author: "duong ninh",
@@ -38,7 +38,7 @@ const HistorySectionData = [
   },
   {
     id: 5,
-    image: "src/assets/images/list-2_450x400_crop_center.webp",
+    image: "/images/list-2_450x400_crop_center.webp",
     date: "Jul 5, 2018",
     title: "Breaking Race Strategy",
     author: "duong ninh",
@@ -47,7 +47,7 @@ const HistorySectionData = [
   },
   {
     id: 6,
-    image: "src/assets/images/list-4_450x400_crop_center.jpg",
+    image: "/images/list-4_450x400_crop_center.jpg",
     date: "Jul 2, 2018",
     title: "Pumpkin buns with salted",
     author: "duong ninh",

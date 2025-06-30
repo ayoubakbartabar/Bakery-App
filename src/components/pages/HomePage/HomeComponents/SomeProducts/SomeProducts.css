@@ -1,5 +1,5 @@
 .some-product-bg {
-    background-image: url('src/assets/images/home-product.webp');
+    background-image: url('/images/home-product.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
