@@ -11,7 +11,7 @@ export default function OurChefSection() {
         <p className="our-chef-subtitle">Work With Passion</p>
         <img
           className="welcome-section-top-img"
-          src="src/assets/images/floral_grande.avif"
+          src="/images/floral_grande.avif"
           alt="floral_grande"
         />
 

@@ -1,5 +1,5 @@
 .about-us-section-bg {
-    background-image: url("src/assets/images/about.webp");
+    background-image: url("/images/about.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

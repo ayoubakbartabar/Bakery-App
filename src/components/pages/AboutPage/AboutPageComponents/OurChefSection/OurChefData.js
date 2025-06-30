@@ -1,7 +1,7 @@
 const OurChefData = [
   {
     id: 1,
-    image: "src/assets/images/1_1_grande.webp",
+    image: "/images/1_1_grande.webp",
     title: "Christian Gregory",
     role: "CEO - Founder",
     paragraph: "“Jelly topping halvah caramels sweet cake gummi bears toffee.”",
@@ -10,7 +10,7 @@ const OurChefData = [
   },
   {
     id: 2,
-    image: "src/assets/images/2_grande.webp",
+    image: "/images/2_grande.webp",
     title: "Christian Gregory",
     role: "CEO - Founder",
     paragraph: "“Jelly topping halvah caramels sweet cake gummi bears toffee.”",
@@ -19,7 +19,7 @@ const OurChefData = [
   },
   {
     id: 3,
-    image: "src/assets/images/3_grande.webp",
+    image: "/images/3_grande.webp",
     title: "Christian Gregory",
     role: "CEO - Founder",
     paragraph: "“Jelly topping halvah caramels sweet cake gummi bears toffee.”",
@@ -28,7 +28,7 @@ const OurChefData = [
   },
   {
     id: 4,
-    image: "src/assets/images/4_grande.webp",
+    image: "/images/4_grande.webp",
     title: "Christian Gregory",
     role: "CEO - Founder",
     paragraph: "“Jelly topping halvah caramels sweet cake gummi bears toffee.”",
