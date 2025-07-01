@@ -1,5 +1,5 @@
 .blogs-header-bg {
-    background-image: url("src/assets/images/blog.webp");
+    background-image: url("/images/blog.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
