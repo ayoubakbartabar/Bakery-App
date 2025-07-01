@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import "./ContactMapSection.css";
 
-// Center coordinates for the initial map position
 const center = {
   lat: 43.6151,
   lng: -79.684,
@@ -22,7 +21,17 @@ export default function ContactMapSection() {
     googleMapsApiKey: "AIzaSyDB49E207L6hJC25EbGeSrABpsr3y9y8HY",
   });
 
-  // Array of marker data including position and title
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    if (isLoaded) {
+      const timeout = setTimeout(() => {
+        setShowLoader(false);
+      }, 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [isLoaded]);
+
   const markers = [
     { id: 1, position: { lat: 43.6151, lng: -79.684 }, title: "Meadowvale" },
     {
@@ -45,25 +54,30 @@ export default function ContactMapSection() {
   return (
     <div className="contact-map-bg">
       <section className="contact-map-section">
-        {/* Render map only after Google Maps API has loaded */}
-        {isLoaded ? (
+        {showLoader && (
+          <div className="map-loader-overlay">
+            <div className="loader-icon">
+              <i className="fas fa-map-marker-alt"></i>
+              <p>در حال بارگذاری نقشه...</p>
+            </div>
+          </div>
+        )}
+
+        {isLoaded && (
           <GoogleMap
-            mapContainerStyle={containerStyle} // Apply container styles
-            center={center} // Set initial center of the map
-            zoom={13} // Initial zoom level
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={13}
           >
             {/* Render a Marker component for each marker in the array */}
             {markers.map((marker) => (
               <Marker
                 key={marker.id}
                 position={marker.position}
-                title={marker.title} // Tooltip shown on marker hover
+                title={marker.title}
               />
             ))}
           </GoogleMap>
-        ) : (
-          // Show loading text while the map API is loading
-          <p>Loading map...</p>
         )}
       </section>
     </div>
