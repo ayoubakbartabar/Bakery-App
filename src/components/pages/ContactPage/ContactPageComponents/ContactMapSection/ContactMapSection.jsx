@@ -27,7 +27,7 @@ export default function ContactMapSection() {
     if (isLoaded) {
       const timeout = setTimeout(() => {
         setShowLoader(false);
-      }, 2000);
+      }, 4000);
       return () => clearTimeout(timeout);
     }
   }, [isLoaded]);
@@ -57,8 +57,7 @@ export default function ContactMapSection() {
         {showLoader && (
           <div className="map-loader-overlay">
             <div className="loader-icon">
-              <i className="fas fa-map-marker-alt"></i>
-              <p>در حال بارگذاری نقشه...</p>
+              <div class="loader"></div>
             </div>
           </div>
         )}
