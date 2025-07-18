@@ -1,5 +1,11 @@
 .carousel-section-bg {
-    background: url('/images/testimonials.jpg') no-repeat center center/cover;
+    background: url('/images/testimonials.jpg')no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    z-index: 0;
 }
 
 .carousel-section {

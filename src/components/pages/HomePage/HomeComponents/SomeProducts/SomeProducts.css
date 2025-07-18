@@ -2,8 +2,13 @@
     background-image: url('/images/home-product.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    background-color: #fff;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    z-index: 0;
 }
 
 .some-products-section {

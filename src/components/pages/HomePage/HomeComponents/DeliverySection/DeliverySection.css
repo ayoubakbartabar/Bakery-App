@@ -1,5 +1,14 @@
 .delivery-section-bg {
-    background: url('/images/delivery-form.webp') no-repeat center center/cover;
+    background: url('/images/delivery-form.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    z-index: 0;
 }
 
 .delivery-section {
