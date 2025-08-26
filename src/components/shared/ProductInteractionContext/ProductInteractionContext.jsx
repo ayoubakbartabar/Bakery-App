@@ -1,82 +1,97 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 
-// Create a Context for product interactions (likes and purchases)
 const ProductInteractionContext = createContext();
 
-// Provider component to wrap around parts of the app that need product interaction state
 export const ProductInteractionProvider = ({ children }) => {
-  // Initialize buyProducts state by reading from localStorage if available
-  const [buyProducts, setBuyProducts] = useState(() => {
-    const saved = localStorage.getItem("buyProducts");
-    return saved ? JSON.parse(saved) : {};
-  });
-
-  // State to track liked products by their IDs
+  const [buyProducts, setBuyProducts] = useState([]);
   const [likedItems, setLikedItems] = useState({});
 
-  // Toggle like status for a given product ID
-  const toggleLike = (id) => {
-    setLikedItems((prev) => ({
-      ...prev,
-      [id]: !prev[id], // flip the like status
-    }));
-  };
-
-  // Add a product to buyProducts or increase its count by 1 if it already exists
-  const buyProduct = (product) => {
-    const unitPrice = parseFloat(product.price.replace("$", ""));
-
-    setBuyProducts((prev) => {
-      const existing = prev[product.id];
-      const count = existing ? existing.count + 1 : 1;
-      const totalPrice = (unitPrice * count).toFixed(2);
-
-      return {
-        ...prev,
-        [product.id]: {
-          ...product,
-          count,
-          totalPrice,
-        },
-      };
-    });
-  };
-
-  // Remove a product from buyProducts by ID
-  const removeProduct = (id) => {
-    setBuyProducts((prev) => {
-      const newState = { ...prev };
-      delete newState[id];
-      return newState;
-    });
-  };
-
-  // Update product count and total price directly
-  const setProductCount = (productId, count) => {
-    if (count < 1) return; // prevent invalid count
-
-    setBuyProducts((prev) => {
-      const product = prev[productId];
-      if (!product) return prev;
-
-      const unitPrice = parseFloat(product.price.replace("$", ""));
-      const totalPrice = (unitPrice * count).toFixed(2);
-
-      return {
-        ...prev,
-        [productId]: {
-          ...product,
-          count,
-          totalPrice,
-        },
-      };
-    });
-  };
-
-  // Save buyProducts state to localStorage on every change
+  // Load products from localStorage on mount
   useEffect(() => {
-    localStorage.setItem("buyProducts", JSON.stringify(buyProducts));
-  }, [buyProducts]);
+    const saved = localStorage.getItem("buyProducts");
+    if (saved) {
+      try {
+        setBuyProducts(JSON.parse(saved));
+      } catch {
+        setBuyProducts([]);
+      }
+    }
+  }, []);
+
+  // Centralized update function
+  const updateProducts = useCallback((updater) => {
+    setBuyProducts((current) => {
+      const updated = updater(current);
+      localStorage.setItem("buyProducts", JSON.stringify(updated));
+      return updated;
+    });
+  }, []);
+
+  // Add or increment product
+  const buyProduct = useCallback(
+    (product) => {
+      const unitPrice = parseFloat(product.price.replace("$", ""));
+      updateProducts((products) => {
+        const existing = products.find((p) => p.id === product.id);
+        if (existing) {
+          return products.map((p) =>
+            p.id === product.id
+              ? {
+                  ...p,
+                  count: p.count + 1,
+                  totalPrice: ((p.count + 1) * unitPrice).toFixed(2),
+                }
+              : p
+          );
+        }
+        return [
+          ...products,
+          { ...product, count: 1, totalPrice: unitPrice.toFixed(2) },
+        ];
+      });
+    },
+    [updateProducts]
+  );
+
+  // Decrement or remove product
+  const decrementProduct = useCallback(
+    (id) => {
+      updateProducts((products) =>
+        products
+          .map((p) =>
+            p.id === id
+              ? {
+                  ...p,
+                  count: p.count - 1,
+                  totalPrice: (
+                    (p.count - 1) *
+                    parseFloat(p.price.replace("$", ""))
+                  ).toFixed(2),
+                }
+              : p
+          )
+          .filter((p) => p.count > 0)
+      );
+    },
+    [updateProducts]
+  );
+
+  // Remove product by ID
+  const removeProduct = useCallback(
+    (id) => updateProducts((products) => products.filter((p) => p.id !== id)),
+    [updateProducts]
+  );
+
+  // Toggle like
+  const toggleLike = useCallback((id) => {
+    setLikedItems((prev) => ({ ...prev, [id]: !prev[id] }));
+  }, []);
 
   return (
     <ProductInteractionContext.Provider
@@ -85,8 +100,8 @@ export const ProductInteractionProvider = ({ children }) => {
         toggleLike,
         buyProducts,
         buyProduct,
+        decrementProduct,
         removeProduct,
-        setProductCount, // expose the setter to update quantity
       }}
     >
       {children}
@@ -94,6 +109,5 @@ export const ProductInteractionProvider = ({ children }) => {
   );
 };
 
-// Custom hook to access the ProductInteractionContext easily
 export const useProductInteraction = () =>
   useContext(ProductInteractionContext);
